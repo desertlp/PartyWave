@@ -1,0 +1,2 @@
+# PartyWave
+First Fullstack Application

@@ -1,9 +1,7 @@
-const mongoose = require('mongoose'); // import mongoose and its methods
-const MONGODB_URI = 'mongodb://localhost:27017/SOCALSURF'
+const mongoose = require('mongoose'); 
+const MONGODB_URI = 'mongodb://localhost:27017/partyWave'
 
-mongoose.connect(MONGODB_URI, { // mongodb is a secondary server, must connect to it liketwe do with server.js
-     // first argument: connectionstring
-    // second argument: deprecation warnings (google this often)
+mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

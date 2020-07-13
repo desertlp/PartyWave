@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Me</title>
+</head>
+<body>
+    <header>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/beaches">Beaches</a>
+          <a href="/beaches/new">Add New Beach</a>
+        </nav>
+      </header>
+
+    <h1>Show Page: Beach</h1>
+
+    <h2>Name: <%= beach.name %></h2>
+    <p>County: <%= beach.county %></p>
+
+    <p>Address: <%= beach.streetAddress%>  <%= beach.city%>, <%= beach.zip%></p>
+    <p>Surf Report: <link src="<%= beach.surflineSrc %>"></p>
+    <p>Surf Cam: <link src="<%= beach.surfCamSrc %>"></p>
+  
+    <!-- Delete Button -->
+    <form style="display: inline-block;" method="POST" action="/beaches/<%= beach.id %>?_method=DELETE">
+      <button type="submit">Delete</button>
+    </form>
+
+  
+    <!-- Edit Button -->
+    <a href="/beaches/<%= beach.id %>/edit">
+      <button>Edit</button>
+    </a>
+</body>
+</html>

@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
+      rel="stylesheet"
+    /> -->
     <title>Party Wave</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/beaches">Beaches</a>
-          <a href="/beaches/new">Add New Beach</a>
-        </nav>
-      </header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/beaches">Beaches</a>
+        <a href="/beaches/new">Add New Beach</a>
+      </nav>
+    </header>
 
     <h1>Add A Surf Beach</h1>
-    <form action='/beaches' method='POST'>
-      Name: <input type='text' name='name' /> <br/><br/>
-      Street Address: <input type='text' name='streetAddress' /> <br/><br/>
-      City: <input type='text' name='city' /> <br/><br/>
-      Zip: <input type='text' name='zip' /> <br/><br/>
-      County: <input type='text' name='county' /> <br/><br/>  
-      Link To Surfline Surf Report: <input type='text' name='surflineSrc' /> <br/><br/>   
-      Link To Live Surf Cam: <input type='text' name='surfCamSrc' /> <br/><br/>   
+    <form action="/beaches" method="POST">
+      Name: <input type="text" name="name" /> <br /><br />
+      Street Address: <input type="text" name="streetAddress" /> <br /><br />
+      City: <input type="text" name="city" /> <br /><br />
+      Zip: <input type="text" name="zip" /> <br /><br />
+      County: <input type="text" name="county" /> <br /><br />
+      Link To Surfline Surf Report: <input type="text" name="surflineSrc" />
+      <br /><br />
+      Link To Live Surf Cam: <input type="text" name="surfCamSrc" />
+      <br /><br />
       <button type="submit">Submit</button>
     </form>
-
-</body>
+  </body>
 </html>

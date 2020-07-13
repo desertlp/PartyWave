@@ -20,11 +20,10 @@ app.use((req, res, next) => {
   const timeStamp = new Date().toLocaleTimeString();
   console.log(`${method} ${url} ${timeStamp}`);
   next();
-
-  //Ser static Assets
-  app.use(express.static(`${__dirname}/public`));
 });
 
+//Ser static Assets
+app.use(express.static(`${__dirname}/public`));
 // Home Route (GET)
 app.get("/", (req, res) => {
   res.send("Homepage");

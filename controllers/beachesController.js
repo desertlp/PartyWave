@@ -2,7 +2,7 @@
 // CURRENT PATH = '/beaches'
 
 const express = require('express'); // get the express methods to work on this page
-const db = require('../../../lessons/fullstack-dev/SoCalSurf/models'); // get into out database .. to get out of the current directory
+const db = require('../models'); // get into out database .. to get out of the current directory
 const router = express.Router(); // this is an express method we must define
 const methodOverride = require('method-override'); // import node packages 
 

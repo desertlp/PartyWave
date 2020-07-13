@@ -1,3 +1,8 @@
-* {
+body {
+  /* background-image: url("https://images.unsplash.com/photo-1537172414600-7aa232780868?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"); */
   background-color: aqua;
+}
+
+h1 {
+  color: red;
 }

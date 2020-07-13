@@ -58,30 +58,6 @@ router.get('/', (req, res) => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// edit (works in tandem with update) (done)
-// router.get('/:id/edit', (req, res) => {
-//     db.BEACH.findById(req.params.id, (err, foundBeachToEdit) => {
-//         if (err) return console.log(err);
-//         console.log(foundBeachToEdit);
-//         res.render('edit', {
-//             beach: foundBeachToEdit,
-//         });
-//     });
-// });
-
 // edit (works in tandem with update) (new, not checked if working yet)
 router.get('/:id/edit', (req, res) => {
     db.COUNTY.find({}, (err, allCounties) => {

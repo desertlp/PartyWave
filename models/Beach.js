@@ -5,9 +5,14 @@ const beachSchema = new mongoose.Schema({
     streetAddress: String,
     city: String, 
     zip: Number,
-    county: String, 
+    county: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'County', 
+    }],    
     surflineSrc: String,
     surfCamSrc: String,
 });
 
+
+// Establish and Export Model 
 module.exports = mongoose.model('Beach', beachSchema);

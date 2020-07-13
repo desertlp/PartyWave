@@ -9,7 +9,7 @@
     <header>
         <nav>
           <a href="/">Home</a>
-          <a href="/beaches">Beaches</a>
+          <a href="/beaches">All Beaches</a>
           <a href="/beaches/new">Add New Beach</a>
         </nav>
       </header>
@@ -20,7 +20,16 @@
       Street Address: <input type='text' name='streetAddress' /> <br/><br/>
       City: <input type='text' name='city' /> <br/><br/>
       Zip: <input type='text' name='zip' /> <br/><br/>
-      County: <input type='text' name='county' /> <br/><br/>  
+     
+      <div>
+        <label for="county">County</label>
+        <select name="countyId" id="county">
+          <% counties.forEach(county => { %>
+            <option value="<%= county._id %>"><%= county.name %></option>
+          <% }) %>
+        </select>
+      </div>
+
       Link To Surfline Surf Report: <input type='text' name='surflineSrc' /> <br/><br/>   
       Link To Live Surf Cam: <input type='text' name='surfCamSrc' /> <br/><br/>   
       <button type="submit">Submit</button>

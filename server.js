@@ -1,5 +1,6 @@
 const express = require("express"); // import express
 const app = express(); // create an app level object of express
+const db = require('./models'); // get into out database .. to get out of the current directory
 const PORT = 4000;
 
 const methodOverride = require("method-override");
@@ -21,9 +22,8 @@ app.use((req, res, next) => {
   console.log(`${method} ${url} ${timeStamp}`);
   next();
 
-  //Ser static Assets
-  app.use(express.static(`${__dirname}/public`));
-});
+//Set Static Assets
+app.use(express.static(`${__dirname}/public`))});
 
 // Home Route (GET)
 app.get("/", (req, res) => {
@@ -37,6 +37,22 @@ app.use("/beaches", beachesController); //
 app.get("*", (req, res) => {
   res.send("<h1>404 Error.... Page Not Found.</h1>");
 });
+
+
+
+// Adding County Data (Querying)
+//  const county = {
+//   name: 'Ventura County',
+//   lattitude: '34.3705° N', 
+//   longitude: '119.1391° W',
+// };
+// db.COUNTY.create(county, (err, newCounty) => {
+//   if (err) console.log(err);
+//   console.log('New County Created');
+//   console.log(newCounty);
+//   process.exit();
+// });
+
 
 // Start Server Listener
 app.listen(PORT, console.log(`SERVER RUNNING ON PORT ${PORT}`));

@@ -10,16 +10,29 @@ const methodOverride = require('method-override'); // import node packages
 
 // new (GET)
 router.get('/new', (req, res) => {
-    res.render('new')
+    db.COUNTY.find({}, (err, counties) => {
+        if (err) console.log(err);
+        res.render('new', {counties});
+    })
 });
 
 
-// create (POST)
+//add beach (POST)
 router.post('/', (req, res) => {
-    db.BEACH.create(req.body), (err, newBeach) => {
-        if (err) return console.log(err);
-        res.redirect('/beaches');
-    };
+    db.BEACH.create(req.body, (err, newBeach) => {
+        if(err) console.log(err);
+
+        db.COUNTY.findById(req.body.countyId, (err, foundCounty) => {
+            if(err) console.log(err);
+            
+            foundCounty.beaches.push(newBeach);
+            foundCounty.save((err, savedCounty) => {
+                if(err) console.log(err);
+                console.log('savedCounty:', savedCounty)
+                res.redirect('/beaches');
+            })
+        });
+    });
 });
 
 
@@ -45,30 +58,121 @@ router.get('/', (req, res) => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // edit (works in tandem with update) (done)
+// router.get('/:id/edit', (req, res) => {
+//     db.BEACH.findById(req.params.id, (err, foundBeachToEdit) => {
+//         if (err) return console.log(err);
+//         console.log(foundBeachToEdit);
+//         res.render('edit', {
+//             beach: foundBeachToEdit,
+//         });
+//     });
+// });
+
+// edit (works in tandem with update) (new, not checked if working yet)
 router.get('/:id/edit', (req, res) => {
-    db.BEACH.findById(req.params.id, (err, foundBeachToEdit) => {
-        if (err) return console.log(err);
-        res.render('edit', {
-            beach: foundBeachToEdit,
+    db.COUNTY.find({}, (err, allCounties) => {
+         db.COUNTY.findOne({'beaches': req.params.id})
+        .populate({
+            path: 'beaches',
+            match: {_id: req.params.id},
+        })
+        .exec((err, foundBeachCounty) => {
+            res.render('edit', {
+                beach: foundBeachCounty.beaches[0],
+                counties: allCounties,  
+                beachCounty: foundBeachCounty
+            });
         });
     });
 });
 
 
-// update (done)
-router.post('/:id', (req, res) => {
+
+
+ // update (not working)
+router.put('/:id', (req, res) => {
     db.BEACH.findByIdAndUpdate(
         req.params.id, // find by id
         req.body, // update by id 
         {new: true}, // show the new object, not the old one
         (err, updatedBeach) => { // callback function 
             if (err) return console.log(err);
-            updatedBeach.update({}); // says to update the object with the new information we inputted 
-            res.redirect('/beaches'); // redirect to the beaches page
-        }
-    );
+            db.COUNTY.findOne({'beaches': req.params.id}, (err, foundBeachCounty) => {
+                if(foundBeachCounty._id.toString() !== req.body.countyId) {
+                    foundBeachCounty.beaches.remove(req.params.id);
+                    foundBeachCounty.save((err, savedCounty) => {
+                        db.COUNTY.findById(req.body.countyId, (err, newCounty) => {
+                            newCounty.beaches.push(updatedBeach);
+                            newCounty.save((err, savedNewBeach) => {
+                                res.redirect(`/beaches/${req.params.id}`);
+                            })
+                        })
+                    })
+                } else {
+                    res.redirect(`/beaches/${req.params.id}`);
+                }
+            })
+        });
 });
+
+ 
+
+
+
+
+
+
+// // update (done) (works, this id the old one)
+// router.post('/:id', (req, res) => {
+//     db.BEACH.findByIdAndUpdate(
+//         req.params.id, // find by id
+//         req.body, // update by id 
+//         {new: true}, // show the new object, not the old one
+//         (err, updatedBeach) => { // callback function 
+//             if (err) return console.log(err);
+//             updatedBeach.update({}); // says to update the object with the new information we inputted 
+//             res.redirect('/beaches'); // redirect to the beaches page
+//         }
+//     );
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // destroy

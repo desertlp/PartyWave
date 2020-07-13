@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Me</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Party Wave</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <title>Party Wave</title>
+  </head>
+  <body>
     <header>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/beaches">Beaches</a>
-          <a href="/beaches/new">Add New Beach</a>
-        </nav>
-      </header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/beaches">All Beaches</a>
+        <a href="/beaches/new">Add New Beach</a>
+      </nav>
+    </header>
 
     <h1>All Beaches Index Page</h1>
-     
-      <% if (beaches.length) { %>
-        <% for (let i = 0; i < beaches.length; i++) { %>
-          <a href="/beaches/<%= beaches[i]._id %>">
-            <h4><%= beaches[i].name %></h4>
-          </a>
-          <hr/>
-        <% } %>
-      <% } else { %>
-        <h4>Sorry, doesn't look like we have any beaches uploaded yet</h4>
-      <% } %>
 
-</body>
+    <% if (beaches.length) { %> <% for (let i = 0; i < beaches.length; i++) { %>
+    <div>
+      <a href="/beaches/<%= beaches[i]._id %>">
+        <h4><%= beaches[i].name %></h4>
+      </a>
+    </div>
+    <% } %> <% } else { %>
+    <h4>Sorry, doesn't look like we have any beaches uploaded yet</h4>
+    <% } %>
+  </body>
 </html>
+

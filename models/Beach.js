@@ -5,12 +5,16 @@ const beachSchema = new mongoose.Schema({
     streetAddress: String,
     city: String, 
     zip: Number,
+    surflineSrc: String,
+    surfCamSrc: String,
     county: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'County', 
-    }],    
-    surflineSrc: String,
-    surfCamSrc: String,
+    }],
+    comments :[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment',
+    }],
 });
 
 

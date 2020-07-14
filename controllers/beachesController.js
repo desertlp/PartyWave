@@ -1,14 +1,11 @@
-// ------------------- Simple Routes ------------------- //
-// CURRENT PATH = '/beaches'
-
-const express = require('express'); // get the express methods to work on this page
-const db = require('../models'); // get into out database .. to get out of the current directory
-const router = express.Router(); // this is an express method we must define
-const methodOverride = require('method-override'); // import node packages 
+const express = require('express'); 
+const db = require('../models'); 
+const router = express.Router(); 
+const methodOverride = require('method-override');
 
 // ----- Routes ----- // 
 
-// new (GET)
+// NEW
 router.get('/new', (req, res) => {
     db.COUNTY.find({}, (err, counties) => {
         if (err) console.log(err);
@@ -17,14 +14,12 @@ router.get('/new', (req, res) => {
 });
 
 
-//add beach (POST)
+// ADD
 router.post('/', (req, res) => {
     db.BEACH.create(req.body, (err, newBeach) => {
         if(err) console.log(err);
-
         db.COUNTY.findById(req.body.countyId, (err, foundCounty) => {
             if(err) console.log(err);
-            
             foundCounty.beaches.push(newBeach);
             foundCounty.save((err, savedCounty) => {
                 if(err) console.log(err);
@@ -36,29 +31,43 @@ router.post('/', (req, res) => {
 });
 
 
-// show (GET)
+// SHOW 
 router.get('/:id', (req, res) => {
     db.BEACH.findById(req.params.id, (err, showBeach) => {
         if (err) return console.log(err);
-        res.render('show', {
-            beach: showBeach,
+        db.COMMENT.find({}, (err, allComments)=> {
+            if(err) console.log(err);
+            // console.log(allComments); // this currently shows all comments for all beaches
+        })
+        .populate({
+                path: 'beach',
+                match: {_id: req.params.id},
+        })
+        .exec((err, allComments) => {
+            if (err) console.log(err);
+            res.render('show', {
+                beach: showBeach,
+                comments: allComments,
+            });
         });
     });
 });
 
 
-// index (done)
+
+
+// INDEX
 router.get('/', (req, res) => {
     db.BEACH.find({}, (err, allBeaches) => {
         if (err) return console.log(err);
         res.render('index', {   
             beaches:allBeaches, 
-        })
+        });
     });
 });
 
 
-// edit (works in tandem with update) (new, not checked if working yet)
+// EDIT
 router.get('/:id/edit', (req, res) => {
     db.COUNTY.find({}, (err, allCounties) => {
          db.COUNTY.findOne({'beaches': req.params.id})
@@ -67,6 +76,7 @@ router.get('/:id/edit', (req, res) => {
             match: {_id: req.params.id},
         })
         .exec((err, foundBeachCounty) => {
+            if (err) console.log(err);
             res.render('edit', {
                 beach: foundBeachCounty.beaches[0],
                 counties: allCounties,  
@@ -77,15 +87,13 @@ router.get('/:id/edit', (req, res) => {
 });
 
 
-
-
- // update (not working)
+// UPDATE
 router.put('/:id', (req, res) => {
     db.BEACH.findByIdAndUpdate(
         req.params.id, // find by id
         req.body, // update by id 
         {new: true}, // show the new object, not the old one
-        (err, updatedBeach) => { // callback function 
+        (err, updatedBeach) => { 
             if (err) return console.log(err);
             db.COUNTY.findOne({'beaches': req.params.id}, (err, foundBeachCounty) => {
                 if(foundBeachCounty._id.toString() !== req.body.countyId) {
@@ -105,53 +113,8 @@ router.put('/:id', (req, res) => {
         });
 });
 
- 
 
-
-
-
-
-
-// // update (done) (works, this id the old one)
-// router.post('/:id', (req, res) => {
-//     db.BEACH.findByIdAndUpdate(
-//         req.params.id, // find by id
-//         req.body, // update by id 
-//         {new: true}, // show the new object, not the old one
-//         (err, updatedBeach) => { // callback function 
-//             if (err) return console.log(err);
-//             updatedBeach.update({}); // says to update the object with the new information we inputted 
-//             res.redirect('/beaches'); // redirect to the beaches page
-//         }
-//     );
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// destroy
+// DELETE
 router.delete('/:id', (req, res) => {
     db.BEACH.findByIdAndDelete(
         req.params.id,

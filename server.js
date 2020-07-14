@@ -1,6 +1,6 @@
-const express = require("express"); 
-const app = express(); 
-const db = require('./models'); 
+const express = require("express");
+const app = express();
+const db = require("./models");
 const PORT = 4000;
 const methodOverride = require("method-override");
 
@@ -18,25 +18,29 @@ app.use((req, res, next) => {
   const url = req.url;
   const timeStamp = new Date().toLocaleTimeString();
   console.log(`${method} ${url} ${timeStamp}`);
-next();
+
+  next();
+});
 
 //Set Static Assets
-app.use(express.static(`${__dirname}/public`))});
+app.use(express.static(`${__dirname}/public`));
+
+//Ser static Assets
+app.use(express.static(`${__dirname}/public`));
 
 // Home Route (APP.GET)
-app.get("/", (req, res) => {res.send("Homepage")});
+app.get("/", (req, res) => {
+  res.render("./homepage");
+});
 
 // Controller Routes (APP.USE)
-app.use("/beaches", beachesController); 
+app.use("/beaches", beachesController);
 app.use("/comments", commentsController);
 
 //404 Route (GET)
-app.get("*", (req, res) => {res.send("<h1>404 Error.... Page Not Found.</h1>")});
-
-
-
-
-
+app.get("*", (req, res) => {
+  res.send("<h1>404 Error.... Page Not Found.</h1>");
+});
 
 // Start Server Listener
 app.listen(PORT, console.log(`SERVER RUNNING ON PORT ${PORT}`));

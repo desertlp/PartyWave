@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/main.css" />
+
+    <!-- Bootstrap -->
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
+      rel="stylesheet"
+    /> -->
+
+=======
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,16 +38,17 @@
     rel="stylesheet"
   /> -->
   
+>>>>>>> 728d9d9c066f8b503c8e29c25a3b48f53bc8270f
     <title>Party Wave</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/beaches">All Beaches</a>
-          <a href="/beaches/new">Add New Beach</a>
-        </nav>
-      </header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/beaches">All Beaches</a>
+        <a href="/beaches/new">Add New Beach</a>
+      </nav>
+    </header>
 
     <h1>Show Page: Beach</h1>
 
@@ -41,11 +63,14 @@
     </p>
   
     <!-- Delete Button -->
-    <form style="display: inline-block;" method="POST" action="/beaches/<%= beach.id %>?_method=DELETE">
+    <form
+      style="display: inline-block;"
+      method="POST"
+      action="/beaches/<%= beach.id %>?_method=DELETE"
+    >
       <button type="submit">Delete</button>
     </form>
 
-  
     <!-- Edit Button -->
     <a href="/beaches/<%= beach.id %>/edit">
       <button>Edit</button>

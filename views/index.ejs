@@ -13,9 +13,9 @@
     />
 
     <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
-      rel="stylesheet"
-    /> -->
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
+        rel="stylesheet"
+      /> -->
 
     <title>Party Wave</title>
   </head>
@@ -23,7 +23,7 @@
     <!-- <header>
       <nav>
         <a href="/">Home</a>
-        <a href="/beaches">Beaches</a>
+        <a href="/beaches">All Beaches</a>
         <a href="/beaches/new">Add New Beach</a>
       </nav>
     </header> -->
@@ -93,14 +93,16 @@
     </main>
 
     <% if (beaches.length) { %> <% for (let i = 0; i < beaches.length; i++) { %>
-    <a href="/beaches/<%= beaches[i]._id %>">
-      <h4><%= beaches[i].name %></h4>
-    </a>
-    <hr />
+    <div>
+      <a href="/beaches/<%= beaches[i]._id %>">
+        <h4><%= beaches[i].name %></h4>
+      </a>
+    </div>
     <% } %> <% } else { %>
     <h4>Sorry, doesn't look like we have any beaches uploaded yet</h4>
     <% } %>
 
+    <!------------BootStrap JS---------->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

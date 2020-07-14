@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/main.css" />
 
     <!---------------- Bootstrap CSS------------->
@@ -17,42 +17,38 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
       rel="stylesheet"
     /> -->
-
+    
+  
     <title>Party Wave</title>
   </head>
   <body>
     <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/beaches">Beaches</a>
-        <a href="/beaches/new">Add New Beach</a>
-      </nav>
-    </header>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/beaches">All Beaches</a>
+          <a href="/beaches/new">Add New Beach</a>
+        </nav>
+      </header>
 
     <h1>Edit</h1>
 
-    <form action="/beaches/<%= beach._id %>?method=PUT" method="POST">
-      Name: <input type="text" name="name" value="<%= beach.name %>" />
-      <br /><br />
-      Street Address:
-      <input
-        type="text"
-        name="streetAddress"
-        value="<%= beach.streetAddress %>"
-      />
-      <br /><br />
-      City: <input type="text" name="city" value="<%= beach.city %>" />
-      <br /><br />
-      Zip: <input type="text" name="zip" value="<%= beach.zip %>" />
-      <br /><br />
-      County: <input type="text" name="county" value="<%= beach.county %>" />
-      <br /><br />
-      Link To Surfline Surf Report:
-      <input type="text" name="surflineSrc" value="<%= beach.surflineSrc %>" />
-      <br /><br />
-      Link To Live Surf Cam:
-      <input type="text" name="surfCamSrc" value="<%= beach.surfCamSrc %>" />
-      <br /><br />
+    <form action="/beaches/<%= beach._id %>?_method=PUT" method="POST">
+ 
+      Name: <input type='text' name='name' value='<%= beach.name %>'/> <br/><br/>
+      Street Address: <input type='text' name='streetAddress' value='<%= beach.streetAddress %>' /> <br/><br/>
+      City: <input type='text' name='city' value='<%= beach.city %>'/> <br/><br/>
+      Zip: <input type='text' name='zip' value='<%= beach.zip %>'/> <br/><br/>
+      <div>
+        <label for="county">County: </label>
+        <select name="countyId" id="county">
+          <% counties.forEach(county => { %>
+            <option value="<%= county._id %>"><%= county.name %></option>
+          <% }) %>
+        </select>
+      </div> </br>
+
+      Link To Surfline Surf Report: <input type='text' name='surflineSrc' value='<%= beach.surflineSrc %>' /> <br/><br/>   
+      Link To Live Surf Cam: <input type='text' name='surfCamSrc' value='<%= beach.surfCamSrc %>' /> <br/><br/>   
 
       <button type="submit">Edit Beach</button>
     </form>
@@ -73,5 +69,9 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
-  </body>
+  
+
+
+
+</body>
 </html>

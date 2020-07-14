@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Wave</title>
+</head>
+<body>
+    <header>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/beaches">All Beaches</a>
+          <a href="/beaches/new">Add New Beach</a>
+        </nav>
+      </header>
+
+    <h1>Edit A Comment About A Beach</h1>
+    <form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
+      User: <input type='text' name='user' value='<%= comment.user %>'/> <br/><br/>
+      Date<input type='text' name='date' value='<%= comment.date %>'/> <br/><br/>
+      Comment: <input type='text' name='body' value='<%= comment.body %>' /> <br/><br/>  
+      <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

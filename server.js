@@ -1,12 +1,12 @@
-const express = require("express"); // import express
-const app = express(); // create an app level object of express
+const express = require("express");
+const app = express();
+const db = require("./models");
 const PORT = 4000;
-
 const methodOverride = require("method-override");
 
 // Controller(s)
 const beachesController = require("./controllers/beachesController"); // import routes
-
+const commentsController = require("./controllers/commentsController");
 // Set View Engine
 app.set("view engine", "ejs");
 
@@ -14,23 +14,28 @@ app.set("view engine", "ejs");
 app.use(methodOverride("_method")); // method-override
 app.use(express.urlencoded({ extended: false })); // body parser
 app.use((req, res, next) => {
-  // method/timestamp
   const method = req.method;
   const url = req.url;
   const timeStamp = new Date().toLocaleTimeString();
   console.log(`${method} ${url} ${timeStamp}`);
+
   next();
 });
 
+//Set Static Assets
+app.use(express.static(`${__dirname}/public`));
+
 //Ser static Assets
 app.use(express.static(`${__dirname}/public`));
-// Home Route (GET)
+
+// Home Route (APP.GET)
 app.get("/", (req, res) => {
   res.render("./homepage");
 });
 
-// Controller Routes (USE)
-app.use("/beaches", beachesController); //
+// Controller Routes (APP.USE)
+app.use("/beaches", beachesController);
+app.use("/comments", commentsController);
 
 //404 Route (GET)
 app.get("*", (req, res) => {

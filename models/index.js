@@ -18,4 +18,5 @@ module.exports = {
     BEACH: require('./Beach'), 
     COUNTY: require('./County'),
     COMMENT: require('./Comment'),
+    USER: require('./User'),
 };

@@ -5,27 +5,6 @@ const methodOverride = require('method-override');
 
 // ----- Routes ----- // 
 
-// NEW
-router.get('/new', (req, res) => {
-    db.BEACH.findById(req.params.id, (err, foundBeach) => {
-        console.log(foundBeach);
-        if (err) console.log(err);
-        res.render('./comments/new');
-    });
-});
-
-
-// CREATE (BUG!!!!!!!!)
-router.post('/', (req, res) => {
-    console.log(req.body); // this works, but nothing below is does
-    db.COMMENT.create(req.body), (err, newComment) => {
-        if (err) console.log(err);
-        console.log(newComment);
-        res.redirect('/');
-    };
-});
-
-
 // SHOW
 router.get('/:id', (req, res) => {
     db.COMMENT.findById(req.params.id, (err, showComment) => {

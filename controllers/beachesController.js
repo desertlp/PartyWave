@@ -126,6 +126,38 @@ router.delete('/:id', (req, res) => {
 });
 
 
+// ----------------- Comments 
+
+// NEW COMMENT FORM ON BEACHES SHOW PAGE
+router.get('/:beachid/comments/new', (req, res) => {
+    db.BEACH.findById(req.params.id, (err, foundBeach) => {
+        console.log(foundBeach);
+        if (err) console.log(err);
+        res.render('./comments/new');
+    });
+});
+
+
+// CREATE NEW COMMENT AND PUSH TO BEACH.COMMENTS ARRAY
+router.post('/:beachid/comments/new', (req, res) => {
+    db.COMMENT.create((req.body), (err, newComment) => {
+        if (err) return console.log(err);
+        console.log(req.params.beachid);
+        db.BEACH.findById(req.params.beachid, (err, foundBeach) => {
+            if (err) return console.log(err);
+            foundBeach.comments.push(newComment);
+            foundBeach.save((err, savedBeach) => {
+                if (err) return console.log(err)
+                console.log(savedBeach);
+                res.redirect('/comments');
+            });
+        });
+    });
+});
+
+
+
+
 // ----- Export Controller ----- // 
 
 module.exports = router;

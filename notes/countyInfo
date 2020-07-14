@@ -15,3 +15,18 @@ Santa Barbara County
 
 Ventura County  
     34.3705° N, 119.1391° W    
+
+
+
+// Adding County Data (Querying)
+const county = {
+   name: 'Ventura County',
+   lattitude: '34.3705° N', 
+   longitude: '119.1391° W',
+};
+db.COUNTY.create(county, (err, newCounty) => {
+   if (err) console.log(err);
+   console.log('New County Created');
+   console.log(newCounty);
+   process.exit();
+});    

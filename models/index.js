@@ -17,4 +17,5 @@ mongoose.connect(MONGODB_URI, { // mongodb is a secondary server, must connect t
 module.exports = {
     BEACH: require('./Beach'), 
     COUNTY: require('./County'),
+    COMMENT: require('./Comment'),
 };

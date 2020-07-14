@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Wave</title>
+</head>
+<body>
+    <header>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/beaches">All Beaches</a>
+          <a href="/beaches/new">Add New Beach</a>
+        </nav>
+      </header>
+
+    <h1>Show Page: Comment</h1>
+
+    <h2>User: <%= user.username %></h2>
+    <p>Name: <%= user.firstName %>, <%= user.lastName %></p>
+    <p><%= user.email%></p>
+ 
+    
+    <!-- Delete Button -->
+    <form style="display: inline-block;" method="POST" action="/user/<%= user.id %>?_method=DELETE">
+      <button type="submit">Delete</button>
+    </form>
+
+  
+    <!-- Edit Button -->
+    <a href="/user/<%= user.id %>/edit">
+      <button>Edit</button>
+    </a>
+
+</body>
+</html>

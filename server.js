@@ -7,6 +7,7 @@ const methodOverride = require("method-override");
 // Controller(s)
 const beachesController = require("./controllers/beachesController"); // import routes
 const commentsController = require("./controllers/commentsController");
+const usersController = require("./controllers/usersController");
 // Set View Engine
 app.set("view engine", "ejs");
 
@@ -36,6 +37,7 @@ app.get("/", (req, res) => {
 // Controller Routes (APP.USE)
 app.use("/beaches", beachesController);
 app.use("/comments", commentsController);
+app.use("/user", usersController);
 
 //404 Route (GET)
 app.get("*", (req, res) => {

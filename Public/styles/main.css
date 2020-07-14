@@ -1,8 +1,54 @@
 body {
   /* background-image: url("https://images.unsplash.com/photo-1537172414600-7aa232780868?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"); */
-  background-color: aqua;
+  background-color: bisque;
 }
 
 h1 {
   color: red;
+}
+
+/* .jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) { */
+/* .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+} */
+
+/* .jumbotron h1 {
+  font-weight: 300;
+} */
+
+/* .jumbotron .container {
+  max-width: 40rem;
+} */
+
+.landing-message {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  background-color: bisque;
+  margin-top: 100px;
+  box-shadow: 1px 0px 18px #ffffff;
+}
+h2 {
+  font-family: osp-din;
+  font-size: 6em;
+}
+.landing-message p {
+  font-size: 1.4em;
+}
+.sign-in {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
 }

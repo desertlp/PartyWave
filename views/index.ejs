@@ -20,61 +20,77 @@
     <title>Party Wave</title>
   </head>
   <body>
-    <header>
+    <!-- <header>
       <nav>
         <a href="/">Home</a>
         <a href="/beaches">Beaches</a>
         <a href="/beaches/new">Add New Beach</a>
       </nav>
+    </header> -->
+
+    <!---------Nav Bar---------->
+
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">PartyWave</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarColor02"
+          aria-controls="navbarColor02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/beaches">Beaches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/beaches/new">Add new Beach</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <form class="form-inline">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
     </header>
 
-    <h1>All Beaches Index Page</h1>
+    <!-- <h1>All Beaches Index Page</h1> -->
 
-    <!-- ------------------BootStrap ----------- ------>
-    <!--BS Grid-------->
-
-    <!--------------BS Cards------------->
-    <!-- LA County -->
-    <div class="card" style="width: 18rem;">
-      <img
-        src="https://images.unsplash.com/photo-1478472638765-20763df09ab2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">Los Angeles</h5>
-        <p class="card-text">Surf from the best waves in Los Angeles.</p>
-        <a href="#" class="btn btn-primary">Surf Los Angeles</a>
+    <!-- JumboTron Bootstrap -->
+    <main>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">All Beaches Index Page</h1>
+          <!-- <p class="lead">
+          This is a modified jumbotron that occupies the entire horizontal space
+          of its parent.
+        </p> -->
+        </div>
       </div>
-    </div>
-
-    <!-- Orange County -->
-    <div class="card" style="width: 18rem;">
-      <img
-        src="https://images.unsplash.com/photo-1537172414600-7aa232780868?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">Orange County</h5>
-        <p class="card-text">Surf from the best waves in Orange County.</p>
-        <a href="#" class="btn btn-primary">Surf Orange County</a>
-      </div>
-    </div>
-
-    <!-- SD County Card -->
-    <div class="card" style="width: 18rem;">
-      <img
-        src="https://images.unsplash.com/photo-1517699418036-fb5d179fef0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2091&q=80"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">San Diego</h5>
-        <p class="card-text">Surf from the best waves in San Diego County.</p>
-        <a href="#" class="btn btn-primary">Surf San Diego</a>
-      </div>
-    </div>
+    </main>
 
     <% if (beaches.length) { %> <% for (let i = 0; i < beaches.length; i++) { %>
     <a href="/beaches/<%= beaches[i]._id %>">
@@ -84,8 +100,6 @@
     <% } %> <% } else { %>
     <h4>Sorry, doesn't look like we have any beaches uploaded yet</h4>
     <% } %>
-
-    <!------------BootStrap JS---------->
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

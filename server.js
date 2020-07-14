@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 app.use(express.static(`${__dirname}/public`));
 // Home Route (GET)
 app.get("/", (req, res) => {
-  res.send("Homepage");
+  res.render("./homepage");
 });
 
 // Controller Routes (USE)

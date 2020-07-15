@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <%- include('partials/head.ejs') %>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
@@ -12,28 +13,30 @@
       <p><%= beach.city %>, <%= beach.zip %></p>
       <p><%= beach.county[0].name %></p>
       <p>Surf Report: <%= beach.surflineSrc %></p>
-      <p>Surf Cam: <%= beach.surfCamSrc %></p>
-        
+      <p>Surf Cam: <%= beach.surfCamSrc %></p>     
     </div>
 
-    <!-- Delete Button -->
-    <form
-      style="display: inline-block;"
-      method="POST"
-      action="/beaches/<%= beach.id %>?_method=DELETE">
-      <button type="submit">Delete</button>
-    </form>
 
-    <!-- Edit Button -->
-    <a href="/beaches/<%= beach.id %>/edit">
-      <button>Edit</button>
-    </a>
+      <!-- Delete Button -->
+      <form
+        style="display: inline-block;"
+        method="POST"
+        action="/beaches/<%= beach.id %>?_method=DELETE"
+      >
+        <button type="submit">Delete</button>
+      </form>
 
-    <!-- Like Button -->
-    <button>
-      <span class="fa fa-star" aria-hidden="true"></span>
-    </button>
-    <hr/>
+      <!-- Edit Button -->
+      <a href="/beaches/<%= beach.id %>/edit">
+        <button>Edit</button>
+      </a>
+
+      <!-- Like Button -->
+      <button>
+        <span class="fa fa-star" aria-hidden="true"></span>
+      </button>
+      <hr />
+
 
     <!--- Comments -->
     <div class="comment-section">
@@ -53,23 +56,21 @@
         </div>
         
 
-      </div>
-    
-      <!--- Add Comment Section -->
-      <div class ="add-comment">
-        <form action='/beaches/<%= beach.id %>/comments/new' method='POST'>
-          User: <input type='text' name='user' /> <br/><br/>
-          Date: <input type='text' name='date' /> <br/><br/>
-          Comment: <input type='text' name='body' /> <br/><br/>  
-          <button type="submit">Add Comment</button>
-        </form>
-      </div> 
-    </div>
-    <hr/>
-    
-  </div>
 
-  <%- include('partials/bs.ejs') %>
-  <script src="/js/working.js"></script>
-</body>
+        <!--- Add Comment Section -->
+        <div class="add-comment">
+          <form action="/beaches/<%= beach.id %>/comments/new" method="POST">
+            User: <input type="text" name="user" /> <br /><br />
+            Date: <input type="text" name="date" /> <br /><br />
+            Comment: <input type="text" name="body" /> <br /><br />
+            <button type="submit">Add Comment</button>
+          </form>
+        </div>
+      </div>
+      <hr />
+    </div>
+
+    <%- include('partials/bs.ejs') %>
+    <script src="/js/working.js"></script>
+  </body>
 </html>

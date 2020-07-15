@@ -9,7 +9,7 @@
     <div class='beach-info'>
       <h4><%= beach.name %></h4>
       <p><%= beach.streetAddress%></p>
-      <p><%= beach.city%>, <%= beach.zip%></p>
+      <p><%= beach.city %>, <%= beach.zip %></p>
       <p><%= beach.county[0].name %></p>
       <p>Surf Report: <%= beach.surflineSrc %></p>
       <p>Surf Cam: <%= beach.surfCamSrc %></p>
@@ -41,19 +41,17 @@
       <div class="posted-comments">
         <h3>Comments</h3>
         <div>
-          <% if (beach.comments.length) { %> <% for (let i = 0; i < beach.comments.length; i++) { %>
-            <div>
+          <% if (beach.comments.length) { %> 
+            <% for (let i = 0; i < beach.comments.length; i++) { %>
+      
               <p><%= beach.comments[i].body %> | Posted: <%= beach.comments[i].date %> | User: <%= beach.comments[i].user %></p>
               <a href="/comments/<%= beach.comments[i]._id %>"><%= beach.comments[i].id %></a>
-              <hr/>
-            </div>
-            <% } %> <% } else { %>
+ 
+          <% } %> <% } else { %>
             <h3>Be the first to write a review</h3>
-            <% } %>
+          <% } %>
         </div>
-        <% } %> <% } else { %>
-        <h4>Be the first to write a review</h4>
-        <% } %>
+        
 
       </div>
     

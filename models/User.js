@@ -1,11 +1,22 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    username: String,
-    password: String,
+    username: {
+        type: String,
+        required: true,
+    },
+    password: {
+        type: String,
+        required: true, 
+        minlength: 4,
+    },
     firstName: String,
     lastName: String,
-    email: String,
+    email: {
+        type: String,
+        trim: true,
+        lowercase: true,
+    },
     beaches: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Beach',
@@ -14,7 +25,7 @@ const userSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment',
     }],
-});
+}, {timestamps: true});
 
 
 // Establish and Export Model 

@@ -1,207 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-    <!-- Google Font -->
-    
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Ranchers&display=swap" rel="stylesheet">
-    <!-- End font -->
-
-    
-    
-
-    <link rel="stylesheet" href="/styles/main.css" />
-    
-
-    <%- include('../partials/nav.ejs') %> 
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <!-------Nav Bar---------->
+    <%- include('../partials/nav.ejs') %>
 
     <!-- Landing message -->
-    
+
     <div class="landing">
       <h2>PartyWave</h2>
       <p>Find your waves</p>
       <div class="container">
         <div class="row align-items-center justify-content-center">
-          
           <div class="sign-in">
             <form
-
-            method="POST"
-            action="/api/login"
-            class="form-inline"
-            id="log-in"
-            novalidate="novalidate"
-
+              method="POST"
+              action="/api/login"
+              class="form-inline"
+              id="log-in"
+              novalidate="novalidate"
             >
-            <div class="form-group">
-              <input
-              type="email"
-              name="email"
-              class="form-control"
-              id="email"
-              placeholder="Email"
-              required=""
-              autofocus=""
-              aria-required="true"
-
-              />
-            </div>
-            <div class="form-group">
-              <input
-
-              type="password"
-              name="password"
-              class="form-control"
-              placeholder="Password"
-              required=""
-              aria-required="true"
-
-              />
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Log In" class="btn btn-dark" />
-            </div>
-
-          </form>
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                  required=""
+                  autofocus=""
+                  aria-required="true"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Password"
+                  required=""
+                  aria-required="true"
+                />
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Log In" class="btn btn-dark" />
+              </div>
+            </form>
+          </div>
         </div>
-        
+
+        <p id="sign-in-link">New user?<a href="/user/new">Sign up here</a></p>
       </div>
-      
-      <p id="sign-in-link"> New user?<a href="/user/new">Sign up here</a> </p>
     </div>
-  </div>
-  
-  <!-- End landing message -->
-  
-  
-  <!-- <main>
-    <-------Nav Bar---------->
-      
-      
-      
 
-
-      <!-- End nav -->
-      
-      <!-- JumboTron Bootstrap -->
-      <img class="card-img-top"
+    <!---LA County -->
+    <img
+      class="card-img-top"
       src="https://images.unsplash.com/photo-1526810209977-4708ffb9c873?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80"
-      alt=" Card image cap" /> 
-      <div class="jumbotron jumbotron-fluid">
-        
-        
-        <div class="container">
+      alt=" Card image cap"
+    />
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
         <h1 class="display-4">Los Angeles</h1>
         <p class="lead">
-              Surf LA
-            </p> 
-            <button id="LosAngeles" onclick="demo()"> Find your Waves</button>
-            
-        </div>
+          Surf LA
+        </p>
+        <button id="LosAngeles" onclick="demo()">Find your Waves</button>
       </div>
-    
+    </div>
 
-    <!-- Orange Jumbo -->
-
-    <img class="card-img-top"
+    <!-- Orange County -->
+    <img
+      class="card-img-top"
       src="https://images.unsplash.com/photo-1537172414600-7aa232780868?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
-      alt=" Card image cap" />
+      alt=" Card image cap"
+    />
     <div class="jumbotron jumbotron-fluid">
-    
       <div class="container">
         <h1 class="display-4">Orange County</h1>
         <p class="lead">
           Surf OC
         </p>
-        <button id="LosAngeles" onclick="demo()"> Find your Waves</button>
-    
+        <button id="LosAngeles" onclick="demo()">Find your Waves</button>
       </div>
     </div>
-   
 
-<!-- SD Jumbotron -->
-    <img class="card-img-top"
+    <!-- SD County -->
+    <img
+      class="card-img-top"
       src="https://images.unsplash.com/photo-1517699418036-fb5d179fef0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2091&q=80"
-      alt=" Card image cap" />
+      alt=" Card image cap"
+    />
     <div class="jumbotron jumbotron-fluid">
-    
       <div class="container">
         <h1 class="display-4">San Diego</h1>
         <p class="lead">
-          Surf San Diego 
+          Surf San Diego
         </p>
-        <button id="LosAngeles" onclick="demo()"> Find your Waves</button>
-    
-
+        <button id="LosAngeles" onclick="demo()">Find your Waves</button>
       </div>
     </div>
-   
-    <!----------- SD County Card ----------->
-    
-    <div class="card">
-      <img class="card-img-top"
-      src="https://images.unsplash.com/photo-1517699418036-fb5d179fef0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2091&q=80/"
-      alt=" Card image cap" />
-      <div class="card-body">
-        <h5 class="card-title">San Diego</h5>
-        <p class="card-text">
-          Surf from the best waves in San Diego County
-
-
-    
-    <!-- End JumboTron -->
-    
-
-
-    
-
 
     <!-- Footer -->
-
-     <footer class="text-muted">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Back to top</a>
-        </p>
-        <p>
-          ~PartyWave~
-          <br>
-           Find your Waves
-        </p>
-        <p>
-          Created by Lora Paine & Will Adams-2020
-          <br>
-          <a href="https://github.com/wadams458">Visit Wills GitHub</a>
-          <br>
-          <a href="https://en.wikipedia.org/wiki/The_Wiggles"
-            >Visit Loras GitHub</a>
-        
-
-        </p>
-        <a href="/beaches/" class="btn btn-primary">Surf San Diego</a>
-      </div>
-
-    </footer> 
-
-
-  </div>
-
-  <!----------- Footer ----------->
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Back to top</a>
-      </p>
-    </div>
-  </footer>
-
-  <%- include('../partials/bs.ejs') %>
-</body>
+    <%- include('../partials/footer.ejs') %> <%- include('../partials/bs.ejs')
+    %>
+  </body>
 </html>

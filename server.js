@@ -11,6 +11,7 @@ require('dotenv').config();
 const beachesController = require("./controllers/beachesController"); // import routes
 const commentsController = require("./controllers/commentsController");
 const usersController = require("./controllers/usersController");
+const authController = require("./controllers/authController");
 
 // Set View Engine
 app.set("view engine", "ejs");
@@ -43,6 +44,7 @@ app.get("/about", (req, res) => {res.render("about")});
 app.use("/beaches", beachesController);
 app.use("/comments", commentsController);
 app.use("/user", usersController);
+app.use("/api", authController);
 
 //404 Route (GET)
 app.get("*", (req, res) => {res.send("<h1>404 Error.... Page Not Found.</h1>")});

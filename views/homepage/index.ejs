@@ -9,14 +9,78 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <!-- Google Font -->
+    
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Ranchers&display=swap" rel="stylesheet">
+    <!-- End font -->
+    
+
     <link rel="stylesheet" href="/styles/main.css" />
-
-    <!---------Nav Bar---------->
-
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="/">PartyWave</a>
-        <button
+    
+    <!-- Landing message -->
+    
+    <div class="landing">
+      <h2>PartyWave</h2>
+      <p>Find your waves</p>
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          
+          <div class="sign-in">
+            <form
+            method="post"
+            action="/api/login"
+            class="form-inline"
+            id="log-in"
+            novalidate="novalidate"
+            >
+            <div class="form-group">
+              <input
+              type="email"
+              name="user[email]"
+              class="form-control"
+              id="email"
+              placeholder="Email"
+              required=""
+              autofocus=""
+              aria-required="true"
+              />
+            </div>
+            <div class="form-group">
+              <input
+              type="password"
+              name="user[password]"
+              class="form-control"
+              placeholder="Password"
+              required=""
+              aria-required="true"
+              />
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Log In" class="btn btn-dark" />
+            </div>
+          </form>
+        </div>
+        
+      </div>
+      
+      <p id="sign-in-link"> New user?
+        <a href="" data-toggle="modal" data-target="#signUpModal"
+        >Sign up here</a
+        >
+      </p>
+    </div>
+  </div>
+  
+  <!-- End landing message -->
+  
+  
+  <!-- <main>
+    <-------Nav Bar---------->
+      
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="/">PartyWave</a>
+          <button
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -24,204 +88,127 @@
           aria-controls="navbarColor02"
           aria-expanded="false"
           aria-label="Toggle navigation"
-        >
+          >
           <span class="navbar-toggler-icon"></span>
         </button>
-
+        
         <div class="collapse navbar-collapse" id="navbarColor02">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <!-- <a class="nav-link" href="#"
                 >Home <span class="sr-only">(current)</span></a
-              > -->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/beaches">Beaches</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/beaches/new">Add new Beach</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/user/">My Profile</a>
-            </li>
-          </ul>
-
-          <form class="form-inline">
-            <input
+                > -->
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/beaches">Beaches</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/beaches/new">Add new Beach</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/user/">My Profile</a>
+              </li>
+            </ul>
+            
+            <form class="form-inline">
+              <input
               class="form-control mr-sm-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
-            />
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Landing message -->
-
-    <div class="landing">
-    
-
-      
-    
-
-      <h2>PartyWave</h2>
-      <p>Find your waves</p>
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-        
-          <div class="sign-in">
-            <form
-              method="post"
-              action="/api/login"
-              class="form-inline"
-              id="log-in"
-              novalidate="novalidate"
-            >
-              <div class="form-group">
-                <input
-                  type="email"
-                  name="user[email]"
-                  class="form-control"
-                  id="email"
-                  placeholder="Email"
-                  required=""
-                  autofocus=""
-                  aria-required="true"
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="password"
-                  name="user[password]"
-                  class="form-control"
-                  placeholder="Password"
-                  required=""
-                  aria-required="true"
-                />
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Log In" class="btn btn-dark" />
-              </div>
+              />
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+                Search
+              </button>
             </form>
           </div>
-
-        </div>
-        
-        <p id="sign-in-link"> New user?
-          <a href="" data-toggle="modal" data-target="#signUpModal"
-            >Sign up here</a
-          >
-        </p>
-    </div>
-    </div>
-
-    <!-- End landing message -->
-
-    <!-- End nav -->
-
-    <!-- JumboTron Bootstrap -->
-    <!-- <main>
+        </nav>
+      </header>
+      <!-- End nav -->
+      
+      <!-- JumboTron Bootstrap -->
+      <img class="card-img-top"
+      src="https://images.unsplash.com/photo-1526810209977-4708ffb9c873?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80"
+      alt=" Card image cap" /> 
       <div class="jumbotron jumbotron-fluid">
+        
         <div class="container">
-          <h1 class="display-4">PartyWave</h1>
-           <p class="lead">
-              This is a modified jumbotron that occupies the entire horizontal space
-              of its parent.
+        <h1 class="display-4">Los Angeles</h1>
+        <p class="lead">
+              Surf LA
             </p> 
+            <button id="LosAngeles" onclick="demo()"> Find your Waves</button>
+            
         </div>
       </div>
-    </main> -->
-    <!-- End JumboTron -->
-    <br />
-    <br />
-    <br />
-    <br />
+    </main> 
 
-    <!-- La County Card -->
+    <!-- Orange Jumbo -->
 
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="card-deck">
-      <div class="card" 
-        <img class="card-img-top"
-        src="https://images.unsplash.com/photo-1478472638765-20763df09ab2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80""
-        alt=" Card image cap" />
-        <div class="card-body">
-          <h5 class="card-title">Los Angeles</h5>
-
-          <p class="card-text">
-            Surf from the best waves in Los Angeles.
-          </p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-          <a href="#" class="btn btn-primary">Surf Los Angeles</a>
-        </div>
-      </div>
-      <!-----------Orange County Card----------->
-      <div class="card">
-        <img class="card-img-top"
-        src="https://images.unsplash.com/photo-1537172414600-7aa232780868?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80""
-        alt=" Card image cap" />
-        <div class="card-body">
-          <h5 class="card-title">Orange County</h5>
-          <p class="card-text">
-            Surf from the best waves in Orange County.
-          </p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-          <a href="#" class="btn btn-primary">Surf Orange County</a>
-        </div>
-      </div>
-
-      <!-----------SD County------------>
-      <div class="card">
-        <img class="card-img-top"
-        src="https://images.unsplash.com/photo-1517699418036-fb5d179fef0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2091&q=80/""
-        alt=" Card image cap" />
-        <div class="card-body">
-          <h5 class="card-title">San Diego</h5>
-          <p class="card-text">
-            Surf from the best waves in San Diego County
-          </p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-          <a href="#" class="btn btn-primary">Surf San Diego</a>
-        </div>
+    <img class="card-img-top"
+      src="https://images.unsplash.com/photo-1537172414600-7aa232780868?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
+      alt=" Card image cap" />
+    <div class="jumbotron jumbotron-fluid">
+    
+      <div class="container">
+        <h1 class="display-4">Orange County</h1>
+        <p class="lead">
+          Surf OC
+        </p>
+        <button id="LosAngeles" onclick="demo()"> Find your Waves</button>
+    
       </div>
     </div>
+    </main>
+
+<!-- SD Jumbotron -->
+    <img class="card-img-top"
+      src="https://images.unsplash.com/photo-1517699418036-fb5d179fef0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2091&q=80"
+      alt=" Card image cap" />
+    <div class="jumbotron jumbotron-fluid">
+    
+      <div class="container">
+        <h1 class="display-4">San Diego</h1>
+        <p class="lead">
+          Surf San Diego 
+        </p>
+        <button id="LosAngeles" onclick="demo()"> Find your Waves</button>
+    
+      </div>
+    </div>
+    </main>
+    <!-- End JumboTron -->
+    
+
+    
+    
 
     <!-- Footer -->
 
-    <footer class="text-muted">
+     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
           <a href="#">Back to top</a>
         </p>
         <p>
-          Album example is © Bootstrap, but please download and customize it for
-          yourself!
+          ~PartyWave~
+          <br>
+           Find your Waves
         </p>
         <p>
-          New to Bootstrap?
-          <a href="https://getbootstrap.com/">Visit the homepage</a> or read our
-          <a href="/docs/4.5/getting-started/introduction/"
-            >getting started guide</a
-          >.
+          Created by Lora Paine & Will Adams-2020
+          <br>
+          <a href="https://github.com/wadams458">Visit Wills GitHub</a>
+          <br>
+          <a href="https://en.wikipedia.org/wiki/The_Wiggles"
+            >Visit Loras GitHub</a>
+        
         </p>
       </div>
-    </footer>
+    </footer> 
 
     <!-------End Footer------>
 

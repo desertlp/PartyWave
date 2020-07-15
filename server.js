@@ -8,8 +8,11 @@ const methodOverride = require("method-override");
 const beachesController = require("./controllers/beachesController"); // import routes
 const commentsController = require("./controllers/commentsController");
 const usersController = require("./controllers/usersController");
+
 // Set View Engine
 app.set("view engine", "ejs");
+
+
 
 // MiddleWare
 app.use(methodOverride("_method")); // method-override
@@ -28,7 +31,7 @@ app.use(express.static(`${__dirname}/public`));
 
 // Home Route (APP.GET)
 app.get("/", (req, res) => {res.render("./homepage")});
-app.get("/about", (req, res) => {res.render("./about")});
+app.get("/about", (req, res) => {res.render("about")});
 
 // Controller Routes (APP.USE)
 app.use("/beaches", beachesController);

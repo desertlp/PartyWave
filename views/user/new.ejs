@@ -5,14 +5,29 @@
   <%- include('../partials/nav.ejs') %>
 
   <div>
-    <h3>New User</h3>
+    <h3>Register</h3>
     <div>
       <form action='/user' method='POST'>
-        Username: <input type='text' name='username' /> <br/><br/>
-        Password: <input type='text' name='password' /> <br/><br/>
-        First Name: <input type='text' name='firstName' /> <br/><br/> 
-        Last Name: <input type='text' name='lastName' /> <br/><br/> 
-        email: <input type='text' name='email' /> <br/><br/> 
+        <div class='form-group'>
+          <label for='name'>Username</label>
+          <input type='text' name='username' id='name' class='form-control' /> <br/><br/>
+        </div>
+        <div class='form-group'>
+          <label for='name'>Password</label>
+          <input type='password' name='password' id='password' class='form-control' /> <br/><br/>
+        </div>
+        <div class='form-group'>
+          <label for='name'>First Name</label>
+          <input type='text' name='firstName' id='firstName' class='form-control' /> <br/><br/>
+        </div>
+        <div class='form-group'>
+          <label for='name'>Last Name</label>
+          <input type='text' name='lastName' id='lastName' class='form-control' /> <br/><br/>
+        </div>
+        <div class='form-group'>
+          <label for='name'>email</label>
+          <input type='email' name='email' id='email' class='form-control' /> <br/><br/>
+        </div>
         <button type="submit">Submit</button>
       </form>
     </div>

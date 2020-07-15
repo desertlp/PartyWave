@@ -26,13 +26,9 @@ app.use((req, res, next) => {
 //Set Static Assets
 app.use(express.static(`${__dirname}/public`));
 
-//Ser static Assets
-app.use(express.static(`${__dirname}/public`));
-
 // Home Route (APP.GET)
-app.get("/", (req, res) => {
-  res.render("./homepage");
-});
+app.get("/", (req, res) => {res.render("./homepage")});
+app.get("/about", (req, res) => {res.render("./about")});
 
 // Controller Routes (APP.USE)
 app.use("/beaches", beachesController);
@@ -40,9 +36,12 @@ app.use("/comments", commentsController);
 app.use("/user", usersController);
 
 //404 Route (GET)
-app.get("*", (req, res) => {
-  res.send("<h1>404 Error.... Page Not Found.</h1>");
-});
+app.get("*", (req, res) => {res.send("<h1>404 Error.... Page Not Found.</h1>")});
+
+
+// Querying 
+
+
 
 // Start Server Listener
 app.listen(PORT, console.log(`SERVER RUNNING ON PORT ${PORT}`));

@@ -37,11 +37,11 @@ router.get("/:id", (req, res) => {
       if (err) console.log(err);
       res.render("show", {
           beach: foundBeach,
-        });
       });
   });
+});
 
-// INDEX
+  // INDEX
 router.get("/", (req, res) => {
   db.BEACH.find({}, (err, allBeaches) => {
     if (err) return console.log(err);
@@ -106,9 +106,8 @@ router.delete("/:id", (req, res) => {
   });
 });
 
-// ----- Export Controller ----- //
 
-// ----------------- Comments
+// ----------------- Comments ----------------- //
 
 // NEW COMMENT FORM ON BEACHES SHOW PAGE
 router.get("/:beachid/comments/new", (req, res) => {
@@ -135,6 +134,9 @@ router.post("/:beachid/comments/new", (req, res) => {
     });
   });
 });
+
+
+
 
 // ----- Export Controller ----- //
 

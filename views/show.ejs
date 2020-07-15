@@ -16,18 +16,54 @@
 
 <body>
     <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/beaches">All Beaches</a>
-        <a href="/beaches/new">Add New Beach</a>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/">PartyWave</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarColor02"
+          aria-controls="navbarColor02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/beaches/">Browse All Spots</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/beaches/new">Add A Surf Spot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        <!-- 
+          <form class="form-inline">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form> -->
+        </div>
       </nav>
     </header>
-
-    <h1>Show Page: Beach</h1>
-
-    <img class="likeSurfBoard" src="/images/surfBoard.png">
-
     <h2><%= beach.name %></h2>
+
     <p>County: <%= beach.county %></p>
     <p>Address: <%= beach.streetAddress%>  <%= beach.city%>, <%= beach.zip%></p>
     <p>Surf Report: 
@@ -50,7 +86,14 @@
       <button>Edit</button>
     </a>
 
+    <!-- Like Button -->
+    <button>
+      <span class="fa fa-star" aria-hidden="true"></span>
+    </button>
+
+    
   <hr/>
+  
   
 
 
@@ -69,6 +112,7 @@
             <h4>Be the first to write a review</h4>
             <% } %>
         </div>
+      
         <!--- Add Comment Section -->
         <div class ="add-comment">
           <form action='/beaches/<%= beach.id %>/comments/new' method='POST'>

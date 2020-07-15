@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PartyWave</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -11,9 +12,9 @@
     />
     <link rel="stylesheet" href="/styles/main.css" />
 
-    <!---------Nav Bar---------->
-
+    <!--------- Header Section ---------->
     <header>
+      <!---------Nav Bar---------->
       <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="/">PartyWave</a>
         <button
@@ -31,24 +32,21 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <!-- <a class="nav-link" href="#"
-                >Home <span class="sr-only">(current)</span></a
-              > -->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/beaches">Beaches</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/beaches/new">Add new Beach</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/user/">My Profile</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/beaches/">Browse All Spots</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/beaches/new">Add A Surf Spot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
           </ul>
-
+        <!-- 
           <form class="form-inline">
             <input
               class="form-control mr-sm-2"
@@ -59,21 +57,19 @@
             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
               Search
             </button>
-          </form>
+          </form> -->
         </div>
       </nav>
+
     </header>
 
-    <!-- Landing message -->
+    <!--------- Landing Section ---------->
 
     <div class="landing">
-    
-
-      
-    
-
+      <!--------- Landing Message ---------->
       <h2>PartyWave</h2>
       <p>Find your waves</p>
+      <!--------- Sign In  ---------->
       <div class="container">
         <div class="row align-items-center justify-content-center">
         
@@ -110,6 +106,7 @@
               <div class="form-group">
                 <input type="submit" value="Log In" class="btn btn-dark" />
               </div>
+              
             </form>
           </div>
 
@@ -138,17 +135,17 @@
       </div>
     </main> -->
     <!-- End JumboTron -->
-    <br />
-    <br />
-    <br />
-    <br />
 
-    <!-- La County Card -->
-
-    <title>Document</title>
   </head>
+
+
+
   <body>
+
+    <!----------- Card Deck ----------->
     <div class="card-deck">
+
+      <!----------- LA County Card ----------->
       <div class="card">
         <img class="card-img-top" 
         src="https://images.unsplash.com/photo-1478472638765-20763df09ab2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" 
@@ -159,13 +156,11 @@
           <p class="card-text">
             Surf from the best waves in Los Angeles.
           </p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-          <a href="#" class="btn btn-primary">Surf Los Angeles</a>
+          <a href="/beaches/" class="btn btn-primary">Surf Los Angeles</a>
         </div>
       </div>
-      <!-----------Orange County Card----------->
+
+      <!-----------Orange County Card ----------->
       <div class="card">
         <img class="card-img-top"
         src="https://images.unsplash.com/photo-1537172414600-7aa232780868?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
@@ -175,14 +170,11 @@
           <p class="card-text">
             Surf from the best waves in Orange County.
           </p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-          <a href="#" class="btn btn-primary">Surf Orange County</a>
+          <a href="/beaches/" class="btn btn-primary">Surf Orange County</a>
         </div>
       </div>
 
-      <!-----------SD County------------>
+      <!----------- SD County Card ----------->
       <div class="card">
         <img class="card-img-top"
         src="https://images.unsplash.com/photo-1517699418036-fb5d179fef0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2091&q=80/"
@@ -192,38 +184,23 @@
           <p class="card-text">
             Surf from the best waves in San Diego County
           </p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-          <a href="#" class="btn btn-primary">Surf San Diego</a>
+          <a href="/beaches/" class="btn btn-primary">Surf San Diego</a>
         </div>
       </div>
+
     </div>
 
-    <!-- Footer -->
+    <!----------- Footer ----------->
 
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
           <a href="#">Back to top</a>
         </p>
-        <p>
-          Album example is © Bootstrap, but please download and customize it for
-          yourself!
-        </p>
-        <p>
-          New to Bootstrap?
-          <a href="https://getbootstrap.com/">Visit the homepage</a> or read our
-          <a href="/docs/4.5/getting-started/introduction/"
-            >getting started guide</a
-          >.
-        </p>
       </div>
     </footer>
 
-    <!-------End Footer------>
-
-    <!------------BootStrap JS---------->
+    <!------------ BootStrap JS---------->
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -240,5 +217,6 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+  
   </body>
 </html>

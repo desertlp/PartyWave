@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<%- include('partials/head.ejs') %>
-<body>
-  <%- include('partials/nav.ejs') %>
-  
+ 
   <h3>Edit This Spot</h3>
   <div>
     <form action="/beaches/<%= beach._id %>?_method=PUT" method="POST">
@@ -11,13 +6,18 @@
       Street Address: <input type='text' name='streetAddress' value='<%= beach.streetAddress %>' /> <br/><br/>
       City: <input type='text' name='city' value='<%= beach.city %>'/> <br/><br/>
       Zip: <input type='text' name='zip' value='<%= beach.zip %>'/> <br/><br/>
+      <div>
+        <label for="county">County: </label>
+        <select name="countyId" id="county">
+          <% counties.forEach(county => { %>
+            <option value="<%= county._id %>"><%= county.name %></option>
+          <% }) %>
+        </select>
+      </div> </br>
+  
       Link To Surfline Surf Report: <input type='text' name='surflineSrc' value='<%= beach.surflineSrc %>' /> <br/><br/>   
       Link To Live Surf Cam: <input type='text' name='surfCamSrc' value='<%= beach.surfCamSrc %>' /> <br/><br/>   
   
       <button type="submit">Edit Beach</button>
     </form>
   </div>
-
-  <%- include('partials/bs.ejs') %>
-</body>
-</html>

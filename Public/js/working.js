@@ -1,15 +1,15 @@
-console.log('blue');
+// Change Color of Liked Beach Star
 
-
-
-// const likeIcon = document.getElementsByTagName('i');
-// console.log(likeIcon);
-
-
-const icon = document.querySelector('.likeSurfBoard');
-console.log(icon);
+const likedArray = [];
+const icon = document.querySelector('span');
+const beach = document.querySelector
 icon.addEventListener('click', click);
 
 function click () {
     console.log('clicked');
+    icon.style.color = 'red'; 
+};
+
+if (icon.style.color = 'red') {
+    icon.push(likedArray);
 };

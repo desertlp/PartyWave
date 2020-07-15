@@ -8,15 +8,12 @@
   <div class='beach-wapper'>
     <div class='beach-info'>
       <h4><%= beach.name %></h4>
-      <p>Address: <%= beach.streetAddress%>  <%= beach.city%>, <%= beach.zip%></p>
-      <p>County: <%= beach.county[0].name %></p> 
-        <!-- this should be a link to the county show page, redirects to see all beaches like the link will take you from the cards on the home page -->
-      <p>Surf Report: 
-        <link src="<%= beach.surflineSrc %>">
-      </p>
-      <p>Surf Cam: 
-        <link src="<%= beach.surfCamSrc %>">
-      </p>
+      <p><%= beach.streetAddress%></p>
+      <p><%= beach.city %>, <%= beach.zip %></p>
+      <p><%= beach.county[0].name %></p>
+      <p>Surf Report: <%= beach.surflineSrc %></p>
+      <p>Surf Cam: <%= beach.surfCamSrc %></p>
+        
     </div>
 
     <!-- Delete Button -->
@@ -44,19 +41,17 @@
       <div class="posted-comments">
         <h3>Comments</h3>
         <div>
-          <% if (beach.comments.length) { %> <% for (let i = 0; i < beach.comments.length; i++) { %>
-            <div>
+          <% if (beach.comments.length) { %> 
+            <% for (let i = 0; i < beach.comments.length; i++) { %>
+      
               <p><%= beach.comments[i].body %> | Posted: <%= beach.comments[i].date %> | User: <%= beach.comments[i].user %></p>
               <a href="/comments/<%= beach.comments[i]._id %>"><%= beach.comments[i].id %></a>
-              <hr/>
-            </div>
-            <% } %> <% } else { %>
+ 
+          <% } %> <% } else { %>
             <h3>Be the first to write a review</h3>
-            <% } %>
+          <% } %>
         </div>
-        <% } %> <% } else { %>
-        <h4>Be the first to write a review</h4>
-        <% } %>
+        
 
       </div>
     

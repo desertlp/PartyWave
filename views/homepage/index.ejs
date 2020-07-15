@@ -17,6 +17,9 @@
 
     <link rel="stylesheet" href="/styles/main.css" />
     
+
+    <%- include('../partials/nav.ejs') %> 
+
     <!-- Landing message -->
     
     <div class="landing">
@@ -28,7 +31,7 @@
           <div class="sign-in">
             <form
 
-            method="post"
+            method="POST"
             action="/api/login"
             class="form-inline"
             id="log-in"
@@ -38,7 +41,7 @@
             <div class="form-group">
               <input
               type="email"
-              name="user[email]"
+              name="email"
               class="form-control"
               id="email"
               placeholder="Email"
@@ -52,7 +55,7 @@
               <input
 
               type="password"
-              name="user[password]"
+              name="password"
               class="form-control"
               placeholder="Password"
               required=""
@@ -69,11 +72,7 @@
         
       </div>
       
-      <p id="sign-in-link"> New user?
-        <a href="" data-toggle="modal" data-target="#signUpModal"
-        >Sign up here</a
-        >
-      </p>
+      <p id="sign-in-link"> New user?<a href="/user/new">Sign up here</a> </p>
     </div>
   </div>
   
@@ -83,56 +82,10 @@
   <!-- <main>
     <-------Nav Bar---------->
       
-      <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="/">PartyWave</a>
-          <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarColor02"
-          aria-controls="navbarColor02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarColor02">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <!-- <a class="nav-link" href="#"
-                >Home <span class="sr-only">(current)</span></a
-                > -->
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/beaches">Beaches</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/beaches/new">Add new Beach</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/user/">My Profile</a>
-              </li>
-            </ul>
-            
-            <form class="form-inline">
-              <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              />
-              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
-        </nav>
-      </header>
+      
+      
+
+
       <!-- End nav -->
       
       <!-- JumboTron Bootstrap -->

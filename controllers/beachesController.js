@@ -7,6 +7,7 @@ const methodOverride = require("method-override");
 
 // NEW
 router.get("/new", (req, res) => {
+  if(!req.session.currentUser) return res.redirect('/'); // this should redirect to homepage if user is not logged in and tries to create a new beach
   db.COUNTY.find({}, (err, counties) => {
     if (err) console.log(err);
     res.render("new", { counties });
@@ -15,6 +16,7 @@ router.get("/new", (req, res) => {
 
 // ADD
 router.post("/", (req, res) => {
+  if(!req.session.currentUser) return res.redirect('/'); // this should redirect to homepage if user is not logged in and tries to create a new beach
   db.BEACH.create(req.body, (err, newBeach) => {
     if (err) console.log(err);
     db.COUNTY.findById(req.body.countyId, (err, foundCounty) => {
@@ -59,6 +61,7 @@ router.get("/", (req, res) => {
 
 // EDIT
 router.get("/:id/edit", (req, res) => {
+  if(!req.session.currentUser) return res.redirect('/'); // this should redirect to homepage if user is not logged in and tries to create a new beach
   db.COUNTY.find({}, (err, allCounties) => {
     db.COUNTY.findOne({ beaches: req.params.id })
       .populate({
@@ -78,6 +81,7 @@ router.get("/:id/edit", (req, res) => {
 
 // UPDATE
 router.put("/:id", (req, res) => {
+  if(!req.session.currentUser) return res.redirect('/'); // this should redirect to homepage if user is not logged in and tries to create a new beach
   db.BEACH.findByIdAndUpdate(
     req.params.id, // find by id
     req.body, // update by id
@@ -105,6 +109,7 @@ router.put("/:id", (req, res) => {
 
 // DELETE
 router.delete("/:id", (req, res) => {
+  if(!req.session.currentUser) return res.redirect('/'); // this should redirect to homepage if user is not logged in and tries to create a new beach
   db.BEACH.findByIdAndDelete(req.params.id, (err, deleteBeach) => {
     if (err) return console.log(err);
     console.log("Deleted Beach:", deleteBeach);
@@ -117,6 +122,7 @@ router.delete("/:id", (req, res) => {
 
 // NEW COMMENT FORM ON BEACHES SHOW PAGE
 router.get("/:beachid/comments/new", (req, res) => {
+  if(!req.session.currentUser) return res.redirect('/'); // this should redirect to homepage if user is not logged in and tries to create a new beach
   db.BEACH.findById(req.params.id, (err, foundBeach) => {
     console.log(foundBeach);
     if (err) console.log(err);
@@ -126,6 +132,7 @@ router.get("/:beachid/comments/new", (req, res) => {
 
 // CREATE NEW COMMENT AND PUSH TO BEACH.COMMENTS ARRAY
 router.post("/:beachid/comments/new", (req, res) => {
+  if(!req.session.currentUser) return res.redirect('/'); // this should redirect to homepage if user is not logged in and tries to create a new beach
   db.COMMENT.create(req.body, (err, newComment) => {
     if (err) return console.log(err);
     console.log(req.params.beachid);

@@ -7,7 +7,7 @@ icon.addEventListener('click', click);
 
 function click () {
     console.log('clicked');
-    icon.style.color = 'red'; 
+    icon.style.background-color; 'red'; 
 };
 
 if (icon.style.color = 'red') {

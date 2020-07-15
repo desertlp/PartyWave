@@ -31,25 +31,15 @@ router.post("/", (req, res) => {
 
 // SHOW
 router.get("/:id", (req, res) => {
-  db.BEACH.findById(req.params.id, (err, showBeach) => {
-    if (err) return console.log(err);
-    db.COMMENT.find({}, (err, allComments) => {
+  db.BEACH.findById(req.params.id)
+  .populate('comments')
+  .exec((err, foundBeach) => {
       if (err) console.log(err);
-      // console.log(allComments); // this currently shows all comments for all beaches
-    })
-      .populate({
-        path: "beach",
-        match: { _id: req.params.id },
-      })
-      .exec((err, allComments) => {
-        if (err) console.log(err);
-        res.render("show", {
-          beach: showBeach,
-          comments: allComments,
+      res.render("show", {
+          beach: foundBeach,
         });
       });
   });
-});
 
 // INDEX
 router.get("/", (req, res) => {

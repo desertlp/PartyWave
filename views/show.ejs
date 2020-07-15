@@ -50,43 +50,36 @@
       <button>Edit</button>
     </a>
 
-
-    <!-- Like Button -->
-    <button>Add To My List</button>
-    <!-- on click this button needs to push the beach to an array under the user -->
- 
+  <hr/>
+  
 
 
-  </br>
-  </br>
-    <!--- Add Comment Section -->
-
-    <h1>Add A Comment About A Beach</h1>
-    <form action='/beaches/<%= beach.id %>/comments/new' method='POST'>
-      User: <input type='text' name='user' /> <br/><br/>
-      Date: <input type='text' name='date' /> <br/><br/>
-      Comment: <input type='text' name='body' /> <br/><br/>  
-      <button type="submit">Submit</button>
-    </form>
-
-
-
-    <!--- See Other's Comments Section -->
-
-    <h1>Other's Comments On This Beach</h1>
-    
-      <% if (comments.length) { %> <% for (let i = 0; i < comments.length; i++) { %>
-        <div>
-          <a href="/comments/<%= comments[i]._id %>">
-            <h4><%= comments[i].body %></h4>
-          </a>
+      <!--- Comments -->
+      <div class="comment-section">
+       <!--- See Other's Comments Section -->
+        <div class="posted-comments">
+          <h1>Comments</h1>
+          <% if (beach.comments.length) { %> <% for (let i = 0; i < beach.comments.length; i++) { %>
+            <div>
+              <p><%= beach.comments[i].body %> | By: <%= beach.comments[i].user %> | Date: <%= beach.comments[i].date %></p>
+              <a href="/comments/<%= beach.comments[i]._id %>"><%= beach.comments[i].id %></a>
+              <hr/>
+            </div>
+            <% } %> <% } else { %>
+            <h4>Be the first to write a review</h4>
+            <% } %>
         </div>
-        <% } %> <% } else { %>
-        <h4>Be the first to write a review</h4>
-        <% } %>
-      
-      
-
+        <!--- Add Comment Section -->
+        <div class ="add-comment">
+          <form action='/beaches/<%= beach.id %>/comments/new' method='POST'>
+            User: <input type='text' name='user' /> <br/><br/>
+            Date: <input type='text' name='date' /> <br/><br/>
+            Comment: <input type='text' name='body' /> <br/><br/>  
+            <button type="submit">Add Comment</button>
+          </form>
+        </div> 
+      </div>
+      <hr/>
 
     <!------------BootStrap JS---------->
 

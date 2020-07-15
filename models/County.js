@@ -4,7 +4,7 @@ const countySchema = new mongoose.Schema({
     name: String,
     lattitude: String, 
     longitude: String,
-    beach: [{
+    beaches: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Beach',
     }],

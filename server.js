@@ -28,6 +28,7 @@ app.use(express.static(`${__dirname}/public`));
 
 // Home Route (APP.GET)
 app.get("/", (req, res) => {res.render("./homepage")});
+app.get("/about", (req, res) => {res.render("./about")});
 
 // Controller Routes (APP.USE)
 app.use("/beaches", beachesController);

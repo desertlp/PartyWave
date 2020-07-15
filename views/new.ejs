@@ -1,40 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/main.css" />
+<%- include('partials/head.ejs') %>
+<body>
+  <%- include('partials/nav.ejs') %>
 
-    <!---------------- Bootstrap CSS------------->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
-      rel="stylesheet"
-    /> -->
-    <title>Party Wave</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/beaches">All Beaches</a>
-        <a href="/beaches/new">Add New Beach</a>
-      </nav>
-    </header>
-
-    <h1>Add A Surf Beach</h1>
+  <h3>Add A Surf Beach</h3>
+  <div>
     <form action="/beaches" method="POST">
-      Name: <input type="text" name="name" /> <br /><br />
-      Street Address: <input type="text" name="streetAddress" /> <br /><br />
-      City: <input type="text" name="city" /> <br /><br />
-      Zip: <input type="text" name="zip" /> <br /><br />
-
+      Name: <input type="text" name="name" /> <br/><br/>
+      Street Address: <input type="text" name="streetAddress" /> <br/><br/>
+      City: <input type="text" name="city" /> <br/><br/>
+      Zip: <input type="text" name="zip" /> <br/><br/>
+  
       <div>
         <label for="county">County</label>
         <select name="countyId" id="county">
@@ -43,29 +20,13 @@
           <% }) %>
         </select>
       </div>
-
-      Link To Surfline Surf Report: <input type="text" name="surflineSrc" />
-      <br /><br />
-      Link To Live Surf Cam: <input type="text" name="surfCamSrc" />
-      <br /><br />
+  
+      Link To Surfline Surf Report: <input type="text" name="surflineSrc" /><br/><br/>
+      Link To Live Surf Cam: <input type="text" name="surfCamSrc" /><br/><br/>
       <button type="submit">Submit</button>
     </form>
+  </div>
 
-    <!------------BootStrap JS---------->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <%- include('partials/bs.ejs') %>
+</body>
 </html>

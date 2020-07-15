@@ -11,6 +11,7 @@ h2 {
   font-family: "Do Hyeon", sans-serif;
 }
 
+
 /* .jumbotron {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -56,7 +57,11 @@ h2 {
   margin-right: auto;
   padding-top: 20px;
 }
-
 .landing {
   text-align: center;
+}
+
+.surficon {
+  width: 20%;
+  height: 20%;
 }

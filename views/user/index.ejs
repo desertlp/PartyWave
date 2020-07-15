@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Party Wave</title>
-    <link rel="stylesheet" href="/styles/main.css" />
-    <title>Party Wave</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/beaches">All Beaches</a>
-        <a href="/beaches/new">Add New Beach</a>
-      </nav>
-    </header>
+<%- include('../partials/head.ejs') %>
+<body>
+  <%- include('../partials/nav.ejs') %>
+    
+  <div>
+    <h3>All PartyWave Users</h3>
 
-    <h1>All Users Index Page</h1>
-
-    <% if (users.length) { %> <% for (let i = 0; i < users.length; i++) { %>
     <div>
-      <a href="/user/<%= users[i]._id %>">
-        <h4><%= users[i].username %></h4>
-      </a>
+      <% if (users.length) { %> <% for (let i = 0; i < users.length; i++) { %>
+      <div>
+        <a href="/user/<%= users[i]._id %>">
+          <h4><%= users[i].username %></h4>
+        </a>
+      </div>
+      <% } %> <% } else { %>
+      <p>Sorry, doesn't look like we have any users yet</p>
+      <% } %>
     </div>
-    <% } %> <% } else { %>
-    <h4>Sorry, doesn't look like we have any users yet</h4>
-    <% } %>
-  </body>
+  </div>
+
+  <%- include('../partials/bs.ejs') %>
+</body>
 </html>
 

@@ -19,11 +19,15 @@ router.post("/", (req, res) => {
     if (err) console.log(err);
     db.COUNTY.findById(req.body.countyId, (err, foundCounty) => {
       if (err) console.log(err);
-      foundCounty.beaches.push(newBeach);
-      foundCounty.save((err, savedCounty) => {
-        if (err) console.log(err);
-        console.log("savedCounty:", savedCounty);
-        res.redirect("/beaches");
+      newBeach.county.push(foundCounty);
+      newBeach.save((err, newBeach)=> {
+        if(err) console.log(err);
+        foundCounty.beaches.push(newBeach);
+        foundCounty.save((err, savedCounty) => {
+          if (err) console.log(err);
+          console.log("savedCounty:", savedCounty);
+          res.redirect("/beaches");
+        });
       });
     });
   });
@@ -31,27 +35,19 @@ router.post("/", (req, res) => {
 
 // SHOW
 router.get("/:id", (req, res) => {
-  db.BEACH.findById(req.params.id, (err, showBeach) => {
-    if (err) return console.log(err);
-    db.COMMENT.find({}, (err, allComments) => {
+  db.BEACH.findById(req.params.id)
+  .populate('comments')
+  .populate('county') // did 2 populates
+  .exec((err, foundBeach) => {
       if (err) console.log(err);
-      // console.log(allComments); // this currently shows all comments for all beaches
-    })
-      .populate({
-        path: "beach",
-        match: { _id: req.params.id },
-      })
-      .exec((err, allComments) => {
-        if (err) console.log(err);
-        res.render("show", {
-          beach: showBeach,
-          comments: allComments,
-        });
+      console.log(foundBeach);
+      res.render("show", {
+          beach: foundBeach,
       });
   });
 });
 
-// INDEX
+  // INDEX
 router.get("/", (req, res) => {
   db.BEACH.find({}, (err, allBeaches) => {
     if (err) return console.log(err);
@@ -116,9 +112,8 @@ router.delete("/:id", (req, res) => {
   });
 });
 
-// ----- Export Controller ----- //
 
-// ----------------- Comments
+// ----------------- Comments ----------------- //
 
 // NEW COMMENT FORM ON BEACHES SHOW PAGE
 router.get("/:beachid/comments/new", (req, res) => {
@@ -145,6 +140,9 @@ router.post("/:beachid/comments/new", (req, res) => {
     });
   });
 });
+
+
+
 
 // ----- Export Controller ----- //
 

@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Party Wave</title>
-    <link rel="stylesheet" href="/styles/main.css" />
-    <title>Party Wave</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/beaches">All Beaches</a>
-        <a href="/beaches/new">Add New Beach</a>
-      </nav>
-    </header>
+  <%- include('../partials/head.ejs') %>
+<body>
+  <%- include('../partials/nav.ejs') %>
 
-    <h1>All Comments Index Page</h1>
+  <div>
+    <h3>All Comments On Site</h3>
 
-    <% if (comments.length) { %> <% for (let i = 0; i < comments.length; i++) { %>
     <div>
-      <a href="/comments/<%= comments[i]._id %>">
-        <h4><%= comments[i].body %></h4>
-      </a>
+      <% if (comments.length) { %> <% for (let i = 0; i < comments.length; i++) { %>
+      <div>
+        <p><%= comments[i].body %> | Posted: <%= comments[i].date %> | User: <%= comments[i].user %></p>
+        <a href="/comments/<%= comments[i]._id %>">
+          <p><%= comments[i].id %></p>
+        </a>
+      </div>
+  
+      <% } %> <% } else { %>
+      <p>Sorry, doesn't look like we have any comments yet</p>
+      <% } %>
     </div>
-    <% } %> <% } else { %>
-    <h4>Sorry, doesn't look like we have any comments yet</h4>
-    <% } %>
-  </body>
+  </div>
+
+  <%- include('../partials/bs.ejs') %>
+</body>
 </html>
 

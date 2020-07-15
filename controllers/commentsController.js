@@ -7,14 +7,15 @@ const methodOverride = require('method-override');
 
 // SHOW
 router.get('/:id', (req, res) => {
-    db.COMMENT.findById(req.params.id, (err, showComment) => {
+    db.COMMENT.findById(req.params.id)
+    .populate('beach')
+    .exec((err, showComment) => {
         if (err) return console.log(err);
         res.render('./comments/show', {
             comment: showComment,
         });
     });
 });
-
 
 // INDEX
 router.get('/', (req, res) => {
@@ -49,7 +50,7 @@ router.put('/:id', (req, res) => {
             console.log(updatedComment);
             if (err) return console.log(err);
             updatedComment.update({}); 
-            res.redirect('/comments'); 
+            res.redirect('/comments/'); 
         }
     );
 });

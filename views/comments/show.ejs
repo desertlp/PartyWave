@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Party Wave</title>
-</head>
+<%- include('../partials/head.ejs') %>
 <body>
-    <header>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/beaches">All Beaches</a>
-          <a href="/beaches/new">Add New Beach</a>
-        </nav>
-      </header>
+  <%- include('../partials/nav.ejs') %>
 
-    <h1>Show Page: Comment</h1>
-
-    <h2>User: <%= comment.user %></h2>
-    <p>Date: <%= comment.date %></p>
-    <p><%= comment.body%></p>
- 
+  <div>
+    <div>
+      <h4><%= comment.beach.name %></h4>
+      <p><%= comment.body%></p>
+      <p>Posted: <%= comment.date %> | User: <%= comment.user %></p>
+    </div>
+    
     <!-- Delete Button -->
     <form style="display: inline-block;" method="POST" action="/comments/<%= comment.id %>?_method=DELETE">
       <button type="submit">Delete</button>
     </form>
 
-  
     <!-- Edit Button -->
     <a href="/comments/<%= comment.id %>/edit">
       <button>Edit</button>
     </a>
+  </div>
 
+  <%- include('../partials/bs.ejs') %>
 </body>
 </html>

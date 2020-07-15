@@ -27,11 +27,13 @@
           
           <div class="sign-in">
             <form
+
             method="post"
             action="/api/login"
             class="form-inline"
             id="log-in"
             novalidate="novalidate"
+
             >
             <div class="form-group">
               <input
@@ -43,21 +45,25 @@
               required=""
               autofocus=""
               aria-required="true"
+
               />
             </div>
             <div class="form-group">
               <input
+
               type="password"
               name="user[password]"
               class="form-control"
               placeholder="Password"
               required=""
               aria-required="true"
+
               />
             </div>
             <div class="form-group">
               <input type="submit" value="Log In" class="btn btn-dark" />
             </div>
+
           </form>
         </div>
         
@@ -177,14 +183,28 @@
         </p>
         <button id="LosAngeles" onclick="demo()"> Find your Waves</button>
     
+
       </div>
     </div>
+   
+    <!----------- SD County Card ----------->
+    <div class="card">
+      <img class="card-img-top"
+      src="https://images.unsplash.com/photo-1517699418036-fb5d179fef0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2091&q=80/"
+      alt=" Card image cap" />
+      <div class="card-body">
+        <h5 class="card-title">San Diego</h5>
+        <p class="card-text">
+          Surf from the best waves in San Diego County
+
+
     </main>
     <!-- End JumboTron -->
     
 
     
     
+
 
     <!-- Footer -->
 
@@ -206,28 +226,25 @@
           <a href="https://en.wikipedia.org/wiki/The_Wiggles"
             >Visit Loras GitHub</a>
         
+
         </p>
+        <a href="/beaches/" class="btn btn-primary">Surf San Diego</a>
       </div>
+
     </footer> 
 
-    <!-------End Footer------>
 
-    <!------------BootStrap JS---------->
+  </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <!----------- Footer ----------->
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+    </div>
+  </footer>
+
+  <%- include('../partials/bs.ejs') %>
+</body>
 </html>

@@ -53,10 +53,13 @@ h2 {
   margin-right: auto;
   padding-top: 20px;
 }
+.landing {
+  text-align: center;
+}
+
 
 
 
 .likeSurfBoard {
   width: 10%;
   height: 10%;
-}

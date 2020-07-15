@@ -1,48 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Party Wave</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/styles/main.css" />
-</head>
+<%- include('../partials/head.ejs') %>
 <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="/">PartyWave</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarColor02"
-          aria-controls="navbarColor02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarColor02">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"></li>
-            <li class="nav-item"><a class="nav-link" href="/user/">My Profile</a></li>
-            <li class="nav-item"><a class="nav-link" href="/beaches/">Browse All Spots</a></li>
-            <li class="nav-item"><a class="nav-link" href="/beaches/new">Add A Surf Spot</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <h2><%= user.username %></h2>
-    <p><%= user.firstName %> <%= user.lastName %></p>
-    <p><%= user.email%></p>
+  <%- include('../partials/nav.ejs') %>
+  
+  <div>
+    <div>
+      <h4><%= user.username %></h4>
+      <p><%= user.firstName %> <%= user.lastName %></p>
+      <p><%= user.email%></p>
+    </div>
  
     <!-- Edit Button -->
     <a href="/user/<%= user.id %>/edit">
@@ -54,39 +21,25 @@
       <button type="submit">Delete Profile</button>
     </form>
 
-  
-
-
+    <!-- Liked Beaches Cards -->
     <div class="liked-beaches">
-      <h1>Beaches You Like</h1>
-      <% if (user.beaches.length) { %> <% for (let i = 0; i < user.beaches.length; i++) { %>
-        <div>
-          <a href="/beaches/<%= user.beaches[i]._id %>"></a>
-          <p><%= user.beaches[i].name %></p>
-          <p><%= user.beaches[i].streetAddress %>  <%= user.beaches[i].city %>, <%= user.beaches[i].zip %></p>
-          <p><%= user.beaches[i].County %></p>
-        </div>
-        <% } %> <% } else { %>
-        <h4>Like beaches to save them here</h4>
-        <% } %>
+      <h3>Saved Waves</h3>
+      <div>
+        <% if (user.beaches.length) { %> <% for (let i = 0; i < user.beaches.length; i++) { %>
+          <div>
+            <a href="/beaches/<%= user.beaches[i]._id %>"></a>
+            <h4><%= user.beaches[i].name %></h4>
+            <p><%= user.beaches[i].streetAddress %>  <%= user.beaches[i].city %>, <%= user.beaches[i].zip %></p>
+            <p><%= user.beaches[i].County %></p>
+          </div>
+          <% } %> <% } else { %>
+          <p>Like beaches to save them here</p>
+          <% } %>
+      </div>
     </div>
+    
+  </div>
 
-  <!------------ BootStrap JS---------->
-  <script
-    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-    crossorigin="anonymous"
-  ></script>
-  
+  <%- include('../partials/bs.ejs') %>
 </body>
 </html>

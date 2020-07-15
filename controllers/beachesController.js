@@ -19,11 +19,15 @@ router.post("/", (req, res) => {
     if (err) console.log(err);
     db.COUNTY.findById(req.body.countyId, (err, foundCounty) => {
       if (err) console.log(err);
-      foundCounty.beaches.push(newBeach);
-      foundCounty.save((err, savedCounty) => {
-        if (err) console.log(err);
-        console.log("savedCounty:", savedCounty);
-        res.redirect("/beaches");
+      newBeach.county.push(foundCounty);
+      newBeach.save((err, newBeach)=> {
+        if(err) console.log(err);
+        foundCounty.beaches.push(newBeach);
+        foundCounty.save((err, savedCounty) => {
+          if (err) console.log(err);
+          console.log("savedCounty:", savedCounty);
+          res.redirect("/beaches");
+        });
       });
     });
   });
@@ -33,8 +37,10 @@ router.post("/", (req, res) => {
 router.get("/:id", (req, res) => {
   db.BEACH.findById(req.params.id)
   .populate('comments')
+  .populate('county') // did 2 populates
   .exec((err, foundBeach) => {
       if (err) console.log(err);
+      console.log(foundBeach);
       res.render("show", {
           beach: foundBeach,
       });

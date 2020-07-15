@@ -8,8 +8,9 @@
   <div class='beach-wapper'>
     <div class='beach-info'>
       <h4><%= beach.name %></h4>
-      <p>County: <%= beach.county %></p>
       <p>Address: <%= beach.streetAddress%>  <%= beach.city%>, <%= beach.zip%></p>
+      <p>County: <%= beach.county[0].name %></p> 
+        <!-- this should be a link to the county show page, redirects to see all beaches like the link will take you from the cards on the home page -->
       <p>Surf Report: 
         <link src="<%= beach.surflineSrc %>">
       </p>

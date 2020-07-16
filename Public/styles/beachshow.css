@@ -7,7 +7,8 @@ button {
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    font-size: 18px;
+    width: 100px;
+    font-size: 12px;
   }
   
   a {
@@ -20,3 +21,4 @@ button {
   a:hover {
     opacity: 0.7;
   }
+

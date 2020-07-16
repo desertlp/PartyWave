@@ -9,47 +9,48 @@
   <h3 class="pagetitles"><%= beach.name %></h3>
   <div class='beach-wapper-wrapper'>
     <div class='beach-wapper'>
-      <div class='beach-info'>
-        <h4><%= beach.name %></h4>
-        <p><%= beach.streetAddress%></p>
-        <p><%= beach.city %>, <%= beach.zip %></p>
-        <p><%= beach.county[0].name %></p>
-        <p>Surf Report: <%= beach.surflineSrc %></p>
-        <p>Surf Cam: <%= beach.surfCamSrc %></p>     
-      </div>
-
-
-        <!-- Delete Button -->
-        <form style="display: inline-block;" method="POST" action="/beaches/<%= beach.id %>?_method=DELETE">
-          <button type="submit">Delete</button>
-        </form>
-
-        <!-- Edit Button -->
-        <a href="/beaches/<%= beach.id %>/edit">
-          <button>Edit</button>
-        </a>
-
-        <!-- Like Button -->
-        <button>
-          <span class="fa fa-star" aria-hidden="true"></span>
-        </button>
-        <hr />
-
+      <div class="justthisbeachinfo">
+        <div>
+          <img class="beach-info-img" src="/images/people.jpg" alt="Waves" style="size=50%" />
+        </div>
+        <div class='beach-info-text'>
+          <h4><%= beach.name %></h4>
+          <p><%= beach.county[0].name %></p>
+          <p><%= beach.streetAddress%> <%= beach.city %>, <%= beach.zip %></p>
+          <p>Surf Report: <%= beach.surflineSrc %></p>
+          <p>Surf Cam: <%= beach.surfCamSrc %></p>     
+          <div class="beachinfobuttons">
+            <!-- Delete Button -->
+            <form style="display: inline-block;" method="POST" action="/beaches/<%= beach.id %>?_method=DELETE">
+              <button type="submit">Delete</button>
+            </form>
+    
+            <!-- Edit Button -->
+            <a href="/beaches/<%= beach.id %>/edit">
+              <button>Edit</button>
+            </a>
+          </div>
+        </div>
+      </div>  
+        
 
       <!--- Comments -->
       <div class="comment-section">
         <!--- See Other's Comments Section -->
         <div class="posted-comments">
-          <h3>Comments</h3>
+          <h4>What The Deal Here?</h4>
           <div>
             <% if (beach.comments.length) { %> 
               <% for (let i = 0; i < beach.comments.length; i++) { %>
         
-                <p><%= beach.comments[i].body %> | Posted: <%= beach.comments[i].date %> | User: <%= beach.comments[i].user %></p>
-                <a href="/comments/<%= beach.comments[i]._id %>"><%= beach.comments[i].id %></a>
-  
+                
+                <p class="theactualcomment">
+                  <a class="theactualcommentlink" href="/comments/<%= beach.comments[i]._id %>"><%= beach.comments[i].id %></a> || 
+                  <%= beach.comments[i].body %> | Posted: <%= beach.comments[i].date %> | User: <%= beach.comments[i].user %>
+                </p>
+              
             <% } %> <% } else { %>
-              <h3>Be the first to write a review</h3>
+              <p>Be the first to write a review</p>
             <% } %>
           </div>
           
@@ -58,19 +59,23 @@
           <!--- Add Comment Section -->
           <div class="add-comment">
             <form action="/beaches/<%= beach.id %>/comments/new" method="POST">
+              <textarea rows="5" cols="25" name="body"></textarea><br /><br />
               User: <input type="text" name="user" /> <br /><br />
-              Date: <input type="text" name="date" /> <br /><br />
-              Comment: <input type="text" name="body" /> <br /><br />
+              
               <button type="submit">Add Comment</button>
             </form>
           </div>
         </div>
-        <hr />
       </div>
 
-      <%- include('partials/bs.ejs') %>
-      <script src="/js/working.js"></script>
+
+
+      
     </div>
   </div>  
+
+  <%- include('./partials/footer.ejs') %>
+  <%- include('partials/bs.ejs') %>
+  <script src="/js/working.js"></script>
 </body>
 </html>

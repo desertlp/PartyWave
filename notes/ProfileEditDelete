@@ -1,0 +1,13 @@
+ <!-- Edit Button -->
+      <a href="/user/<%= user.id %>/edit">
+        <button>Edit Profile</button>
+      </a>
+
+      <!-- Delete Button -->
+      <form
+        style="display: inline-block;"
+        method="POST"
+        action="/user/<%= user.id %>?_method=DELETE"
+      >
+        <button type="submit">Delete Profile</button>
+      </form>

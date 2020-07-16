@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+  <%- include('../partials/nav.ejs') %>
+    
+  <div>
+    <h3>All PartyWave Users</h3>
+
+    <div>
+      <% if (users.length) { %> <% for (let i = 0; i < users.length; i++) { %>
+      <div>
+        <a href="/user/<%= users[i]._id %>">
+          <h4><%= users[i].username %></h4>
+        </a>
+      </div>
+      <% } %> <% } else { %>
+      <p>Sorry, doesn't look like we have any users yet</p>
+      <% } %>
+    </div>
+  </div>
+
+  <%- include('../partials/bs.ejs') %>
+</body>
+</html>
+

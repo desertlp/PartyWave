@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+  <%- include('../partials/nav.ejs') %>
+
+  <div>
+    <h3>Edit User Credentials</h3>
+    <div>
+      <form action="/user/<%= user._id %>?_method=PUT" method="POST">
+        Username: <input type='text' name='username' value='<%= user.username %>'/> <br/><br/>
+        Password: <input type='text' name='password' value='<%= user.password %>' /> <br/><br/>
+        First Name: <input type='text' name='firstName' value='<%= user.firstName %>'/> <br/><br/> 
+        Last Name: <input type='text' name='lastName' value='<%= user.lastName %>' /> <br/><br/> 
+        email: <input type='text' name='email' value='<%= user.email %>'/> <br/><br/> 
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <%- include('../partials/bs.ejs') %>
+</body>
+</html>

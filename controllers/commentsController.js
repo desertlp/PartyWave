@@ -7,14 +7,15 @@ const methodOverride = require('method-override');
 
 // SHOW
 router.get('/:id', (req, res) => {
-    db.COMMENT.findById(req.params.id, (err, showComment) => {
+    db.COMMENT.findById(req.params.id)
+    .populate('beach')
+    .exec((err, showComment) => {
         if (err) return console.log(err);
         res.render('./comments/show', {
             comment: showComment,
         });
     });
 });
-
 
 // INDEX
 router.get('/', (req, res) => {
@@ -29,6 +30,7 @@ router.get('/', (req, res) => {
 
 // EDIT
 router.get('/:id/edit', (req, res) => {
+    if(!req.session.currentUser) return res.redirect('/'); 
     db.COMMENT.findById(req.params.id, (err, foundCommentToEdit) => {
         if (err) return console.log(err);
         res.render('./comments/edit', {
@@ -40,6 +42,7 @@ router.get('/:id/edit', (req, res) => {
 
 // UPDATE
 router.put('/:id', (req, res) => {
+    if(!req.session.currentUser) return res.redirect('/'); 
     console.log(req.params.id);
     db.COMMENT.findByIdAndUpdate(
         req.params.id, 
@@ -49,7 +52,7 @@ router.put('/:id', (req, res) => {
             console.log(updatedComment);
             if (err) return console.log(err);
             updatedComment.update({}); 
-            res.redirect('/comments'); 
+            res.redirect('/comments/'); 
         }
     );
 });
@@ -57,6 +60,7 @@ router.put('/:id', (req, res) => {
 
 // DELETE
 router.delete('/:id', (req, res) => {
+    if(!req.session.currentUser) return res.redirect('/'); 
     db.COMMENT.findByIdAndDelete(
         req.params.id,
         (err, deleteComment) => {
@@ -67,6 +71,6 @@ router.delete('/:id', (req, res) => {
 });
 
 
-// ----- Export Controller ----- // 
+
 
 module.exports = router;

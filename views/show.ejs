@@ -1,131 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/main.css" />
 
-    <!-- Bootstrap -->
-
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
-      rel="stylesheet"
-    /> -->
-
-=======
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-    crossorigin="anonymous"
-  />
-
-  <!-- <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
-    rel="stylesheet"
-  /> -->
-  
->>>>>>> 728d9d9c066f8b503c8e29c25a3b48f53bc8270f
-    <title>Party Wave</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/beaches">All Beaches</a>
-        <a href="/beaches/new">Add New Beach</a>
-      </nav>
-    </header>
-
-    <h1>Show Page: Beach</h1>
-
-    <h2>Name: <%= beach.name %></h2>
-    <p>County: <%= beach.county %></p>
-    <p>Address: <%= beach.streetAddress%>  <%= beach.city%>, <%= beach.zip%></p>
-    <p>Surf Report: 
-      <link src="<%= beach.surflineSrc %>">
-    </p>
-    <p>Surf Cam: 
-      <link src="<%= beach.surfCamSrc %>">
-    </p>
-  
-    <!-- Delete Button -->
-    <form
-      style="display: inline-block;"
-      method="POST"
-      action="/beaches/<%= beach.id %>?_method=DELETE"
-    >
-      <button type="submit">Delete</button>
-    </form>
-
-    <!-- Edit Button -->
-    <a href="/beaches/<%= beach.id %>/edit">
-      <button>Edit</button>
-    </a>
-
-
-</br>
-</br>
-    <!--- Add Comment Section -->
-
-    <h1>Add A Comment About A Beach</h1>
-    <form action='/beaches/<%= beach.id %>/comments/new' method='POST'>
-      User: <input type='text' name='user' /> <br/><br/>
-      Date: <input type='text' name='date' /> <br/><br/>
-      Comment: <input type='text' name='body' /> <br/><br/>  
-      <button type="submit">Submit</button>
-    </form>
-
-
-
-    <!--- See Other's Comments Section -->
-
-    <h1>Other's Comments On This Beach</h1>
-    
-      <% if (comments.length) { %> <% for (let i = 0; i < comments.length; i++) { %>
+<%- include('partials/head.ejs') %>
+<link rel="stylesheet" href="/styles/beachshow.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+  <%- include('partials/nav.ejs') %>
+  <h3 class="pagetitles"><%= beach.name %></h3>
+  <div class='beach-wapper-wrapper'>
+    <div class='beach-wapper'>
+      <div class="justthisbeachinfo">
         <div>
-          <a href="/comments/<%= comments[i]._id %>">
-            <h4><%= comments[i].body %></h4>
-          </a>
+          <img class="beach-info-img" src="/images/people.jpg" alt="Waves" style="size=50%" />
         </div>
-        <% } %> <% } else { %>
-        <h4>Be the first to write a review</h4>
-        <% } %>
-
-
-
-    <!------------BootStrap JS---------->
-
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
-
+        <div class='beach-info-text'>
+          <h4><%= beach.name %></h4>
+          <p><%= beach.county[0].name %></p>
+          <p><%= beach.streetAddress%> <%= beach.city %>, <%= beach.zip %></p>
+          <p>Surf Report: <%= beach.surflineSrc %></p>
+          <p>Surf Cam: <%= beach.surfCamSrc %></p>     
+          <div class="beachinfobuttons">
+            <!-- Delete Button -->
+            <form style="display: inline-block;" method="POST" action="/beaches/<%= beach.id %>?_method=DELETE">
+              <button type="submit">Delete</button>
+            </form>
     
-   
+            <!-- Edit Button -->
+            <a href="/beaches/<%= beach.id %>/edit">
+              <button>Edit</button>
+            </a>
+          </div>
+        </div>
+      </div>  
+        
+
+      <!--- Comments -->
+      <div class="comment-section">
+        <!--- See Other's Comments Section -->
+        <div class="posted-comments">
+          <h4>What The Deal Here?</h4>
+          <div>
+            <% if (beach.comments.length) { %> 
+              <% for (let i = 0; i < beach.comments.length; i++) { %>
+        
+                
+                <p class="theactualcomment">
+                  <a class="theactualcommentlink" href="/comments/<%= beach.comments[i]._id %>"><%= beach.comments[i].id %></a> || 
+                  <%= beach.comments[i].body %> | Posted: <%= beach.comments[i].date %> | User: <%= beach.comments[i].user %>
+                </p>
+              
+            <% } %> <% } else { %>
+              <p>Be the first to write a review</p>
+            <% } %>
+          </div>
+          
+
+
+          <!--- Add Comment Section -->
+          <div class="add-comment">
+            <form action="/beaches/<%= beach.id %>/comments/new" method="POST">
+              <textarea rows="5" cols="25" name="body"></textarea><br /><br />
+              User: <input type="text" name="user" /> <br /><br />
+              
+              <button type="submit">Add Comment</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      
+    </div>
+  </div>  
+
+  <%- include('./partials/footer.ejs') %>
+  <%- include('partials/bs.ejs') %>
+  <script src="/js/working.js"></script>
 </body>
 </html>

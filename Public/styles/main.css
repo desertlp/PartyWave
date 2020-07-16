@@ -1,12 +1,14 @@
 body {
-  /* background-image: url(https://ctl.s6img.com/society6/img/UniYUuez9i3yW_zyc7IiQzA_i3Y/w_700/comforters/swatch/~artwork,fw_6000,fh_6000,iw_6000,ih_6000/s6-0043/a/19485972_1289849/~~/solo-jazz-comforters.jpg) */
+  background-image: url(https://images.unsplash.com/photo-1548759806-821febf1275c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
 
-  background-color: floralwhite;
+  /* background-color: rgb(233, 202, 140); */
   width: 100%;
   height: 100%;
   padding: 30px;
+  background-size: cover;
   padding-left: 150px;
   padding-right: 150px;
+
 }
 
 h1 {
@@ -241,5 +243,14 @@ h5 {
 .carousel-item {
   width: 100%;
   height: 500px;
+  border-radius: 25px;
+  background-color: black;
+}
+
+video {
+  z-index: -1;
   object-fit: cover;
+  border-radius: 25px;
+  height: 500px;
+  width: 100%;
 }

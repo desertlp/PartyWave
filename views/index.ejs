@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('partials/head.ejs') %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <body>
     <%- include('partials/nav.ejs') %>
 
-    <h3>All Beaches</h3>
+    <h3 class='pagetitles'>All Beaches</h3>
 
-    <!-- Add icon library -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
 
-    <div class="likedBeachCard">
-      <img src="img.jpg" alt="John" style="width: 100%;" />
-      <h1>John Doe</h1>
-      <p class="title">CEO & Founder, Example</p>
-      <p>Harvard University</p>
-      <a href="#"><i class="fa fa-dribbble"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <p><button>Contact</button></p>
-    </div>
 
-    <div>
-      <% if (beaches.length) { %> <% for (let i = 0; i < beaches.length; i++) {
-      %>
-      <div>
-        <a href="/beaches/<%= beaches[i]._id %>">
-          <h4><%= beaches[i].name %></h4>
-          <i class="fa fa-eercast" aria-hidden="true"></i>
-        </a>
-      </div>
+    
+    <div class='beachcards-beachindexpage'>
+      <% if (beaches.length) { %> 
+        <% for (let i = 0; i < beaches.length; i++) { %>
+
+          <div class="likedBeachCard">
+            <a href="/user/"><i class="fa fa-eercast" aria-hidden="true"></i></a>
+            <img src="/images/surfboardrocker.jpg" alt="Waves" style="width: 100%; height: 50%" />
+            <p><%= beaches[i].name %></p>
+            <p><%= beaches[i].city%></p>
+            <p>
+              <button>
+                <a href="/beaches/<%= beaches[i]._id %>">
+                  <h4 class='beachindexpagebeachbuttons'><%= beaches[i].name %></h4>
+                </a>
+              </button>
+            </p>
+            
+          </div>
+
+
+
+          <div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
       <% } %> <% } else { %>
-      <h3>Sorry, doesn't look like we have any beaches uploaded yet</h3>
+        <h3>Sorry, doesn't look like we have any beaches uploaded yet</h3>
       <% } %>
     </div>
 

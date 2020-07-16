@@ -5,7 +5,7 @@
   <%- include('../partials/nav.ejs') %>
 
   <div>
-    <h3>Edit A Comment About A Beach</h3>
+    <h3 class="pagetitles">Edit A Comment About A Beach</h3>
     <form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
       User: <input type='text' name='user' value='<%= comment.user %>'/> <br/><br/>
       Date<input type='text' name='date' value='<%= comment.date %>'/> <br/><br/>

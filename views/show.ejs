@@ -2,75 +2,75 @@
 <html lang="en">
 
 <%- include('partials/head.ejs') %>
+<link rel="stylesheet" href="/styles/beachshow.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
   <%- include('partials/nav.ejs') %>
-  
-  <div class='beach-wapper'>
-    <div class='beach-info'>
-      <h4><%= beach.name %></h4>
-      <p><%= beach.streetAddress%></p>
-      <p><%= beach.city %>, <%= beach.zip %></p>
-      <p><%= beach.county[0].name %></p>
-      <p>Surf Report: <%= beach.surflineSrc %></p>
-      <p>Surf Cam: <%= beach.surfCamSrc %></p>     
-    </div>
-
-
-      <!-- Delete Button -->
-      <form
-        style="display: inline-block;"
-        method="POST"
-        action="/beaches/<%= beach.id %>?_method=DELETE"
-      >
-        <button type="submit">Delete</button>
-      </form>
-
-      <!-- Edit Button -->
-      <a href="/beaches/<%= beach.id %>/edit">
-        <button>Edit</button>
-      </a>
-
-      <!-- Like Button -->
-      <button>
-        <span class="fa fa-star" aria-hidden="true"></span>
-      </button>
-      <hr />
-
-
-    <!--- Comments -->
-    <div class="comment-section">
-      <!--- See Other's Comments Section -->
-      <div class="posted-comments">
-        <h3>Comments</h3>
-        <div>
-          <% if (beach.comments.length) { %> 
-            <% for (let i = 0; i < beach.comments.length; i++) { %>
-      
-              <p><%= beach.comments[i].body %> | Posted: <%= beach.comments[i].date %> | User: <%= beach.comments[i].user %></p>
-              <a href="/comments/<%= beach.comments[i]._id %>"><%= beach.comments[i].id %></a>
- 
-          <% } %> <% } else { %>
-            <h3>Be the first to write a review</h3>
-          <% } %>
-        </div>
-        
-
-
-        <!--- Add Comment Section -->
-        <div class="add-comment">
-          <form action="/beaches/<%= beach.id %>/comments/new" method="POST">
-            User: <input type="text" name="user" /> <br /><br />
-            Date: <input type="text" name="date" /> <br /><br />
-            Comment: <input type="text" name="body" /> <br /><br />
-            <button type="submit">Add Comment</button>
-          </form>
-        </div>
+  <h3 class="pagetitles"><%= beach.name %></h3>
+  <div class='beach-wapper-wrapper'>
+    <div class='beach-wapper'>
+      <div class='beach-info'>
+        <h4><%= beach.name %></h4>
+        <p><%= beach.streetAddress%></p>
+        <p><%= beach.city %>, <%= beach.zip %></p>
+        <p><%= beach.county[0].name %></p>
+        <p>Surf Report: <%= beach.surflineSrc %></p>
+        <p>Surf Cam: <%= beach.surfCamSrc %></p>     
       </div>
-      <hr />
-    </div>
 
-    <%- include('partials/bs.ejs') %>
-    <script src="/js/working.js"></script>
-  </body>
+
+        <!-- Delete Button -->
+        <form style="display: inline-block;" method="POST" action="/beaches/<%= beach.id %>?_method=DELETE">
+          <button type="submit">Delete</button>
+        </form>
+
+        <!-- Edit Button -->
+        <a href="/beaches/<%= beach.id %>/edit">
+          <button>Edit</button>
+        </a>
+
+        <!-- Like Button -->
+        <button>
+          <span class="fa fa-star" aria-hidden="true"></span>
+        </button>
+        <hr />
+
+
+      <!--- Comments -->
+      <div class="comment-section">
+        <!--- See Other's Comments Section -->
+        <div class="posted-comments">
+          <h3>Comments</h3>
+          <div>
+            <% if (beach.comments.length) { %> 
+              <% for (let i = 0; i < beach.comments.length; i++) { %>
+        
+                <p><%= beach.comments[i].body %> | Posted: <%= beach.comments[i].date %> | User: <%= beach.comments[i].user %></p>
+                <a href="/comments/<%= beach.comments[i]._id %>"><%= beach.comments[i].id %></a>
+  
+            <% } %> <% } else { %>
+              <h3>Be the first to write a review</h3>
+            <% } %>
+          </div>
+          
+
+
+          <!--- Add Comment Section -->
+          <div class="add-comment">
+            <form action="/beaches/<%= beach.id %>/comments/new" method="POST">
+              User: <input type="text" name="user" /> <br /><br />
+              Date: <input type="text" name="date" /> <br /><br />
+              Comment: <input type="text" name="body" /> <br /><br />
+              <button type="submit">Add Comment</button>
+            </form>
+          </div>
+        </div>
+        <hr />
+      </div>
+
+      <%- include('partials/bs.ejs') %>
+      <script src="/js/working.js"></script>
+    </div>
+  </div>  
+</body>
 </html>

@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
   <body>
     <%- include('../partials/nav.ejs') %>
 
+    <h3 class="pagetitles">Your Profile</h3>
     <div>
       <div>
         <h4><%= user.username %></h4>
@@ -11,42 +17,24 @@
         <p><%= user.email%></p>
       </div>
 
-      <!-- Add icon library -->
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      />
 
-      <div class="likedBeachCard">
-        <img src="img.jpg" alt="John" style="width: 100%;" />
-        <h1>John Doe</h1>
-        <p class="title">CEO & Founder, Example</p>
-        <p>Harvard University</p>
-        <a href="#"><i class="fa fa-dribbble"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <p><button>Contact</button></p>
-      </div>
-
+      
       <!-- Liked Beaches Cards -->
       <div class="liked-beaches">
         <h3>Saved Waves</h3>
         <div>
-          <% if (user.beaches.length) { %> <% for (let i = 0; i <
-          user.beaches.length; i++) { %>
-          <div>
-            <a href="/beaches/<%= user.beaches[i]._id %>"></a>
-            <h4><%= user.beaches[i].name %></h4>
-            <p>
-              <%= user.beaches[i].streetAddress %> <%= user.beaches[i].city %>,
-              <%= user.beaches[i].zip %>
-            </p>
-            <p><%= user.beaches[i].County %></p>
-          </div>
-          <% } %> <% } else { %>
-          <p>Like beaches to save them here</p>
-          <% } %>
+          <% if (user.beaches.length) { %> 
+            <% for (let i = 0; i <user.beaches.length; i++) { %>
+              <div class="likedBeachCard">
+                <img src="/Public/images/surfboardrocker.jpg" alt="Waves" style="width: 100%;" />
+                <h1><%= user.beaches[i].name %></h1>
+                <p><%= user.beaches[i].streetAddress %> <%= user.beaches[i].city %>, <%= user.beaches[i].zip %></p>
+                <p><%= user.beaches[i].County %></p>
+                <a href="/beaches/<%= user.beaches[i]._id %>"><i class="fa fa-twitter"></i></a>
+              </div>
+              <% } %> <% } else { %>
+              <p>Like beaches to save them here</p>
+              <% } %>
         </div>
       </div>
     </div>

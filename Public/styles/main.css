@@ -105,3 +105,21 @@ button:hover,
 a:hover {
   opacity: 0.7;
 }
+
+
+.beachcards-beachindexpage {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.beachindexpagebeachbuttons {
+  color: floralwhite;
+}
+
+.pagetitles {
+  padding: 40px;
+  background-color: forestgreen;
+  background-image: url('/images/palm.jpg');
+  object-fit: cover;
+ 
+}

@@ -4,7 +4,7 @@
 <body>
   <%- include('partials/nav.ejs') %>
   
-  <h3>Edit This Spot</h3>
+  <h3 class="pagetitles">Edit This Spot</h3>
   <div>
     <form action="/beaches/<%= beach._id %>?_method=PUT" method="POST">
       Name: <input type='text' name='name' value='<%= beach.name %>'/> <br/><br/>

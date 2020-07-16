@@ -8,8 +8,12 @@
     <!-- Landing message -->
 
     <div class="landing">
-      <h2>PartyWave</h2>
-      <p>~ GET ON YOUR WAVELINK ~</p>
+      <h2>
+        <img src="/images/surfBoard.png" style="width: 10%; height: 10%;" />
+        PartyWave
+        <img src="/images/surfBoard.png" style="width: 10%; height: 10%;" />
+      </h2>
+      <!-- <p>~ GET ON YOUR WAVELINK ~</p> -->
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="sign-in">
@@ -49,12 +53,86 @@
           </div>
         </div>
 
-        <p id="sign-in-link">New user?<a href="/user/new">Sign up here</a></p>
+        <p id="sign-in-link"><a href="/user/new">New Surfer Sign Up</a></p>
       </div>
     </div>
 
+    <!-- Carousel -->
+
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <ol class="carousel-indicators">
+        <li
+          data-target="#carouselExampleCaptions"
+          data-slide-to="0"
+          class="active"
+        ></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <video class="d-block w-100" autoplay>
+            <source src="/videos/la-vid.mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block"></div>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block w-100" autoplay>
+            <source src="/videos/oc-vid.mp4" />
+          </video>
+
+          <div class="carousel-caption d-none d-md-block"></div>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block w-100" autoplay>
+            <source src="/videos/sd-vid.mp4" />
+          </video>
+
+          <div class="carousel-caption d-none d-md-block"></div>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleCaptions"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleCaptions"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- Black Bar -->
+    <div class="black-bar-homepage">
+      <img
+        src="/images/surfBoard.png"
+        style="width: 5%; height: 5%; transform: rotate(-90deg);"
+      />
+    </div>
+
+    <div class="below-blackbar-homepage"></div>
+
+    <!-- surf live cams -->
+    <!-- 
+    <video class="beach-info-img" autoplay>
+      <source src="blob:https://www.surfline.com/d4e3b074-872d-4f89-ba3f-1ced46d6cdfa" alt="Waves" style="size=50%" />
+    </video> -->
+
     <!---LA County -->
-    <img
+    <!-- <img
       class="card-img-top"
       src="https://images.unsplash.com/photo-1526810209977-4708ffb9c873?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80"
       alt=" Card image cap"
@@ -67,10 +145,10 @@
         </p>
         <button id="LosAngeles" onclick="demo()">Find your Waves</button>
       </div>
-    </div>
+    </div> -->
 
     <!-- Orange County -->
-    <img
+    <!-- <img
       class="card-img-top"
       src="https://images.unsplash.com/photo-1537172414600-7aa232780868?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
       alt=" Card image cap"
@@ -83,10 +161,10 @@
         </p>
         <button id="LosAngeles" onclick="demo()">Find your Waves</button>
       </div>
-    </div>
+    </div> -->
 
     <!-- SD County -->
-    <img
+    <!-- <img
       class="card-img-top"
       src="https://images.unsplash.com/photo-1517699418036-fb5d179fef0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2091&q=80"
       alt=" Card image cap"
@@ -99,11 +177,10 @@
         </p>
         <button id="LosAngeles" onclick="demo()">Find your Waves</button>
       </div>
-    </div>
+    </div> -->
 
     <!-- Footer -->
-    <%- include('../partials/footer.ejs') %>
-    <%- include('../partials/bs.ejs')
+    <%- include('../partials/footer.ejs') %> <%- include('../partials/bs.ejs')
     %>
   </body>
 </html>

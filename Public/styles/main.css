@@ -1,9 +1,12 @@
 body {
-  /* background-image: url(https://images.unsplash.com/photo-1507991854441-0529e7aaebb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80); */
+  /* background-image: url(https://ctl.s6img.com/society6/img/UniYUuez9i3yW_zyc7IiQzA_i3Y/w_700/comforters/swatch/~artwork,fw_6000,fh_6000,iw_6000,ih_6000/s6-0043/a/19485972_1289849/~~/solo-jazz-comforters.jpg) */
+
   background-color: floralwhite;
   width: 100%;
   height: 100%;
   padding: 30px;
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
 h1 {
@@ -59,9 +62,10 @@ h4 {
   float: none;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 20px;
+  padding-top: 80px;
 }
 .landing {
+  padding: 150px;
   text-align: center;
 }
 
@@ -126,16 +130,14 @@ a:hover {
 
 .pagetitles {
   padding: 40px;
-  background-image: url('/images/palm.jpg');
+  background-image: url("/images/palm.jpg");
   font-size: 40px;
-  color: black;
- 
+  color: floralwhite;
 }
 
 footer {
   padding: 40px;
-  background-image: url('/images/palm.jpg');
- 
+  background-image: url("/images/palm.jpg");
 }
 .author-sections {
   padding: 40px;
@@ -144,7 +146,6 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-
 }
 
 .mb-3 {
@@ -173,7 +174,6 @@ h5 {
   justify-content: space-around;
   flex-shrink: 0;
   margin-top: auto;
-
 }
 .footerLinks {
   font-size: 15px;
@@ -188,19 +188,17 @@ h5 {
   color: floralwhite;
 }
 
-
 .beach-wapper {
   padding: 20px;
   display: flex;
   flex-direction: column;
 }
 .justthisbeachinfo {
-  padding:30px;
+  padding: 30px;
   border: solid 2px red;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-
 }
 
 .comment-section {
@@ -216,7 +214,7 @@ h5 {
 }
 
 .theactualcomment {
-  border: solid .5px lightblue;
+  border: solid 0.5px lightblue;
   padding: 10px;
   margin: 10px;
   font-size: 15px;
@@ -232,5 +230,16 @@ h5 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
 
+.black-bar-homepage {
+  padding: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
 }

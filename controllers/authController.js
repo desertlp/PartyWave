@@ -47,9 +47,9 @@ router.post("/login", (req, res) => { // this needs to link to the homepage
 })
 
 
-// Logout 
+// Logout // this isnt working 
 router.get('/logout', (req, res) => {
-    if(!req.session.currentUser) return res.send('youmust be logged in to log out');
+    if(!req.session.currentUser) return res.redirect('/');
     req.session.destroy((err) => {
         if(err) return console.log(err);
         res.redirect('/'); // direct to homepage on logout

@@ -9,6 +9,7 @@ const methodOverride = require('method-override');
 
 // Profile (BUGGY)
 router.get('/', (req, res) => {
+  if(!req.session.currentUser) return res.redirect('/');
     db.USER.findById(req.session.currentUser._id, (err, foundUser) => {
         if (err) return console.log(err);
         res.render('./user/show', {

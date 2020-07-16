@@ -22,3 +22,7 @@ button {
     opacity: 0.7;
   }
 
+.like-surf-board-icon {
+  color: black;
+  display: absolute;
+}

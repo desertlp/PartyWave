@@ -12,7 +12,7 @@ const beachesController = require("./controllers/beachesController"); // import 
 const commentsController = require("./controllers/commentsController");
 const usersController = require("./controllers/usersController");
 const authController = require("./controllers/authController");
-
+const apiController = require("./controllers/apiController");
 // Set View Engine
 app.set("view engine", "ejs");
 
@@ -45,6 +45,8 @@ app.use("/beaches", beachesController);
 app.use("/comments", commentsController);
 app.use("/user", usersController);
 app.use("/api", authController);
+app.use("/liked", apiController);
+
 
 //404 ROUTE
 app.get("*", (req, res) => {res.send("<h1>404 Error.... Page Not Found.</h1>")});

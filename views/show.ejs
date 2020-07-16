@@ -17,7 +17,7 @@
               <source
                 src="blob:https://www.surfline.com/d4e3b074-872d-4f89-ba3f-1ced46d6cdfa"
                 alt="Waves"
-                style="size=50%"
+                style="size: 50%;"
               />
             </video>
           </div>
@@ -52,8 +52,7 @@
           <div class="posted-comments">
             <h4>What The Deal Here?</h4>
             <div>
-              <% if (beach.comments.length) { %> <% for (let i = 0; i <
-              beach.comments.length; i++) { %>
+              <% if (beach.comments.length) { %> <% for (let i = 0; i < beach.comments.length; i++) { %>
 
               <p class="theactualcomment">
                 <a
@@ -88,6 +87,5 @@
     </div>
 
     <%- include('./partials/footer.ejs') %> <%- include('partials/bs.ejs') %>
-    <script src="/js/working.js"></script>
   </body>
 </html>

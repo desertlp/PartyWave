@@ -6,6 +6,9 @@ body {
   height: 100%;
   padding: 30px;
   background-size: cover;
+  padding-left: 150px;
+  padding-right: 150px;
+
 }
 
 h1 {

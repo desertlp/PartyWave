@@ -19,9 +19,9 @@ app.set("view engine", "ejs");
 
 
 // MiddleWare
-app.use(express.static(`${__dirname}/public`)); //Set Static Assets
-app.use(methodOverride("_method")); // method-override
-app.use(express.urlencoded({ extended: false })); // body parser
+app.use(express.static(`${__dirname}/public`)); // Set Static Assets
+app.use(methodOverride("_method")); // Method-Override
+app.use(express.urlencoded({ extended: false })); // Body-Parser
 app.use((req, res, next) => {
   const method = req.method;
   const url = req.url;
@@ -30,29 +30,24 @@ app.use((req, res, next) => {
 
   next();
 });
-app.use(session({
-  secret: 'jkhaskjhaskjdahskdjahskjd', // process.env.SESSION_SECRET, // this is encryption and decryption
-  resave: false, // do you want to resave the session on every request, no is generally the answer here
-  saveUninitialized: false, // do you want to track unauthenicated users? nah
+app.use(session({ // Sessions
+  secret: 'jkhaskjhaskjdahskdjahskjd', 
+  resave: false, 
+  saveUninitialized: false, 
 }));
 
-// Home Route (APP.GET)
+// HOME ROUTE
 app.get("/", (req, res) => {res.render("./homepage")});
 app.get("/about", (req, res) => {res.render("about")});
 
-// Controller Routes (APP.USE)
+// CONTROLLERS 
 app.use("/beaches", beachesController);
 app.use("/comments", commentsController);
 app.use("/user", usersController);
 app.use("/api", authController);
 
-//404 Route (GET)
+//404 ROUTE
 app.get("*", (req, res) => {res.send("<h1>404 Error.... Page Not Found.</h1>")});
 
-
-// Querying 
-
-
-
-// Start Server Listener
+// SERVER LISTENER
 app.listen(PORT, console.log(`SERVER RUNNING ON PORT ${PORT}`));

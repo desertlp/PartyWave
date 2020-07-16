@@ -11,5 +11,5 @@ const countySchema = new mongoose.Schema({
 });
 
 
-// Establish and Export Model 
+
 module.exports = mongoose.model('County', countySchema);

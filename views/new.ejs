@@ -4,7 +4,7 @@
 <body>
   <%- include('partials/nav.ejs') %>
 
-  <h3>Add A Surf Beach</h3>
+  <h3 class="pagetitles">Add A Beach</h3>
   <div>
     <form action="/beaches" method="POST">
       Name: <input type="text" name="name" /> <br/><br/>
@@ -27,6 +27,7 @@
     </form>
   </div>
 
+  <%- include('./partials/footer.ejs') %>
   <%- include('partials/bs.ejs') %>
 </body>
 </html>

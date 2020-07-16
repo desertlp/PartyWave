@@ -5,7 +5,7 @@
   <%- include('../partials/nav.ejs') %>
 
   <div>
-    <h3>All Comments On Site</h3>
+    <h3 class="pagetitles">All Comments On Site</h3>
 
     <div>
       <% if (comments.length) { %> <% for (let i = 0; i < comments.length; i++) { %>
@@ -21,7 +21,8 @@
       <% } %>
     </div>
   </div>
-
+  
+  <%- include('../partials/footer.ejs') %>
   <%- include('../partials/bs.ejs') %>
 </body>
 </html>

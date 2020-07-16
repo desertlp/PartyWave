@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
 
 // EDIT
 router.get('/:id/edit', (req, res) => {
-    if(!req.session.currentUser) return res.redirect('/'); // this should redirect to homepage if user is not logged in and tries to create a new beach
+    if(!req.session.currentUser) return res.redirect('/'); 
     db.COMMENT.findById(req.params.id, (err, foundCommentToEdit) => {
         if (err) return console.log(err);
         res.render('./comments/edit', {
@@ -42,7 +42,7 @@ router.get('/:id/edit', (req, res) => {
 
 // UPDATE
 router.put('/:id', (req, res) => {
-    if(!req.session.currentUser) return res.redirect('/'); // this should redirect to homepage if user is not logged in and tries to create a new beach
+    if(!req.session.currentUser) return res.redirect('/'); 
     console.log(req.params.id);
     db.COMMENT.findByIdAndUpdate(
         req.params.id, 
@@ -60,7 +60,7 @@ router.put('/:id', (req, res) => {
 
 // DELETE
 router.delete('/:id', (req, res) => {
-    if(!req.session.currentUser) return res.redirect('/'); // this should redirect to homepage if user is not logged in and tries to create a new beach
+    if(!req.session.currentUser) return res.redirect('/'); 
     db.COMMENT.findByIdAndDelete(
         req.params.id,
         (err, deleteComment) => {
@@ -71,6 +71,6 @@ router.delete('/:id', (req, res) => {
 });
 
 
-// ----- Export Controller ----- // 
+
 
 module.exports = router;

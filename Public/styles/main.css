@@ -286,13 +286,6 @@ img {
 }
 
 
-<<<<<<< HEAD
-.parallax {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-=======
 .hompage-title-banner-surfboard {
   color: floralwhite;
   position: absolute;
@@ -338,4 +331,3 @@ img {
   transform: translateZ(-1px);
   z-index: 0;
 } */
->>>>>>> 9b238be90b4eaa48d156337b9891a07338fe76d4

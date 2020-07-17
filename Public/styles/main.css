@@ -78,7 +78,7 @@ h4 {
   padding-top: 80px;
 }
 .landing {
-  padding: 150px;
+  padding: 80px;
   text-align: center;
 }
 
@@ -289,7 +289,7 @@ img {
 .hompage-title-banner-surfboard {
   color: floralwhite;
   position: absolute;
-  top: -35px;
+  top: -100px;
   width: 650px;
   height: 650px; 
   transform: rotate(-90deg);
@@ -316,3 +316,18 @@ img {
   position: absolute;
   z-index: 3;
 }
+
+/* .parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 200px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+  transform: translateZ(-1px);
+  z-index: 0;
+} */

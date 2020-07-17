@@ -1,27 +1,40 @@
 body {
-  /* background-image: url(https://ctl.s6img.com/society6/img/UniYUuez9i3yW_zyc7IiQzA_i3Y/w_700/comforters/swatch/~artwork,fw_6000,fh_6000,iw_6000,ih_6000/s6-0043/a/19485972_1289849/~~/solo-jazz-comforters.jpg) */
+  /* background-image: url(https://images.unsplash.com/photo-1548759806-821febf1275c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60); */
 
-  background-color: floralwhite;
+  /* background-color: rgb(233, 202, 140); */
   width: 100%;
   height: 100%;
-  padding: 30px;
+  background-size: cover;
+  background: radial-gradient(circle at 100px 100px, rgb(247, 197, 103), rgb(205, 119, 199));
+}
+
+.white-background {
+  margin: 50px 200px 50px 200px;
   padding-left: 150px;
   padding-right: 150px;
+  background-color: floralwhite;
+
 }
 
 h1 {
   color: red;
+  font-family: 'Oswald', sans-serif;
 }
 
 h2 {
-  font-family: "Do Hyeon", sans-serif;
+  /* font-family: "Do Hyeon", sans-serif; */
+  font-family: 'Oswald', sans-serif;
   font-size: 100px;
+  color: floralwhite;
+  z-index: 100;
 }
 
 h4 {
   color: teal;
   margin-bottom: 40px;
 }
+
+
 /* .jumbotron {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -79,7 +92,12 @@ img {
   object-fit: cover;
 }
 
+.likedBeachCard-wrapper{
+  padding: 20px;
+
+}
 .likedBeachCard {
+  border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
@@ -126,7 +144,9 @@ a:hover {
 .beachcards-beachindexpage {
   display: flex;
   flex-wrap: wrap;
+  border-radius: 10px;
 }
+
 
 .pagetitles {
   padding: 40px;
@@ -233,7 +253,7 @@ h5 {
 }
 
 .black-bar-homepage {
-  padding: 200px;
+  padding: 100px;
   display: flex;
   justify-content: center;
 }
@@ -241,5 +261,58 @@ h5 {
 .carousel-item {
   width: 100%;
   height: 500px;
+  border-radius: 25px;
+  background-color: black;
+}
+
+video {
+  z-index: -1;
   object-fit: cover;
+  border-radius: 25px;
+  height: 500px;
+  width: 100%;
+}
+
+
+img {
+  border-radius: 15px;
+}
+
+.page-title-homepage-partywave {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+
+.hompage-title-banner-surfboard {
+  color: floralwhite;
+  position: absolute;
+  top: -35px;
+  width: 650px;
+  height: 650px; 
+  transform: rotate(-90deg);
+}
+
+.nav-item .nav-link {
+  font-family: 'Oswald', sans-serif;
+}
+.navbar-brand {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+}
+
+.login-container {
+  margin-top: 200px;
+  position: relative;
+  z-index: 999;
+}
+.like-surf-board-icon {
+  margin-top: 20px;
+  margin-left: 240px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 3;
 }

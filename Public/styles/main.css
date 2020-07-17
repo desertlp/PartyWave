@@ -20,14 +20,12 @@ body {
 h1 {
   color: red;
   font-family: "Oswald", sans-serif;
-
-
-
+}
 
 h3 {
-  font-family: 'Oswald', sans-serif;
-
+  font-family: "Oswald", sans-serif;
 }
+
 h2 {
   /* font-family: "Do Hyeon", sans-serif; */
   font-family: "Oswald", sans-serif;
@@ -38,7 +36,7 @@ h2 {
 h4 {
   color: rgb(205, 119, 199);
   margin-bottom: 40px;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 .landing-message {
@@ -148,6 +146,7 @@ footer {
   padding: 20px;
   margin: 20px;
 }
+
 .col-md-8 {
   padding: 40px;
   padding-top: 60px;
@@ -191,6 +190,7 @@ h5 {
   justify-content: space-evenly;
 }
 .comment-section {
+  margin-top: 60px;
   padding: 20px;
   display: flex;
   flex-direction: row;
@@ -208,9 +208,9 @@ h5 {
   font-size: 15px;
 }
 .add-comment {
-  float: right;
+  float: left;
   margin: 10px;
-  
+
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -265,7 +265,6 @@ img {
   z-index: 999;
 }
 .like-surf-board-icon {
-  
   margin-top: 20px;
   margin-left: 240px;
   width: 50px;
@@ -273,25 +272,26 @@ img {
   position: absolute;
   z-index: 3;
 }
-.cardbackgroundtransparent {
-  background-color: transparent;
+
+.col-md-5 {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  top: 65px;
+  right: 350px;
 }
-#transparentbackground {
-  background-color: none;
-}
+
 .col-md-4 {
   position: relative;
-  /* top: 15px;
-  left: 20px;*/
-
+  /* top: 45px;
+  left: 20px; */
 }
 img {
   border-radius: 10px;
 }
 
-
 .col-md-8 {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 .likedBeachCard-wrapper {
@@ -319,3 +319,14 @@ img {
   align-content: space-around;
 }
 
+.beach-info-img {
+  position: absolute;
+  left: -400px;
+  top: -50px;
+}
+
+.card-body-beach {
+  position: relative;
+  left: 200px;
+  top: -10px;
+}

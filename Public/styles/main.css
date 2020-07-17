@@ -243,3 +243,10 @@ h5 {
   height: 500px;
   object-fit: cover;
 }
+
+
+.parallax {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

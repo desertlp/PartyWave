@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+  <%- include('../partials/nav.ejs') %>
+  <h3 class="pagetitles">Comment</h3>
+  <div class="white-background">
+    <div>
+      <div>
+        <h4><%= comment.beach.name %></h4>
+        <p><%= comment.body%></p>
+        <p>Posted: <%= comment.date %> | User: <%= comment.user %></p>
+      </div>
+      <!-- Delete Button -->
+      <form style="display: inline-block;" method="POST" action="/comments/<%= comment.id %>?_method=DELETE">
+        <button type="submit">Delete</button>
+      </form>
+      <!-- Edit Button -->
+      <a href="/comments/<%= comment.id %>/edit">
+        <button>Edit</button>
+      </a>
+    </div>
+  </div>
+
+  <%- include('../partials/footer.ejs') %>
+  <%- include('../partials/bs.ejs') %>
+</body>
+</html>

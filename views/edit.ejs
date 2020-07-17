@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+<body>
+  <%- include('partials/nav.ejs') %>
+  <h3 class="pagetitles">Edit This Spot</h3>
+  <div class="white-background">
+    <div class="new-beach-form">
+      <form action="/beaches/<%= beach._id %>?_method=PUT" method="POST">
+        Name: <input type='text' name='name' value='<%= beach.name %>'/> <br/><br/>
+        Street Address: <input type='text' name='streetAddress' value='<%= beach.streetAddress %>' /> <br/><br/>
+        City: <input type='text' name='city' value='<%= beach.city %>'/> <br/><br/>
+        Zip: <input type='text' name='zip' value='<%= beach.zip %>'/> <br/><br/>
+        Link To Surfline Surf Report: <input type='text' name='surflineSrc' value='<%= beach.surflineSrc %>' /> <br/><br/>   
+        Link To Live Surf Cam: <input type='text' name='surfCamSrc' value='<%= beach.surfCamSrc %>' /> <br/><br/>   
+    
+        <button type="submit">Edit Beach</button>
+      </form>
+    </div>
+  </div>
+  <%- include('./partials/footer.ejs') %>
+  <%- include('partials/bs.ejs') %>
+</body>
+</html>

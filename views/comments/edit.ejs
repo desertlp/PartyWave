@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+  <%- include('../partials/nav.ejs') %>
+  <h3 class="pagetitles">Edit A Comment About A Beach</h3>
+  <div class="white-background">
+    <div>
+      <form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
+        <textarea rows="5" cols="25" name="body" ><%= comment.body %></textarea><br /><br /> 
+        <p>User: <%= comment.user %> || Posted: <%= comment.date %></p>
+        <button type="submit">Submit</button>
+      </form>
+    </div>  
+  </div>
+  <%- include('../partials/footer.ejs') %>
+  <%- include('../partials/bs.ejs') %>
+</body>
+</html>

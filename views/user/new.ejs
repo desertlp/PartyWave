@@ -3,33 +3,34 @@
 <%- include('../partials/head.ejs') %>
 <body>
   <%- include('../partials/nav.ejs') %>
-
-  <div>
-    <h3 class="pagetitles">Register</h3>
+  <h3 class="pagetitles">Register</h3>
+  <div class="white-background">
     <div>
-      <form action='/user' method='POST'>
-        <div class='form-group'>
-          <label for='name'>Username</label>
-          <input type='text' name='username' id='name' class='form-control' /> <br/><br/>
-        </div>
-        <div class='form-group'>
-          <label for='name'>Password</label>
-          <input type='password' name='password' id='password' class='form-control' /> <br/><br/>
-        </div>
-        <div class='form-group'>
-          <label for='name'>First Name</label>
-          <input type='text' name='firstName' id='firstName' class='form-control' /> <br/><br/>
-        </div>
-        <div class='form-group'>
-          <label for='name'>Last Name</label>
-          <input type='text' name='lastName' id='lastName' class='form-control' /> <br/><br/>
-        </div>
-        <div class='form-group'>
-          <label for='name'>email</label>
-          <input type='email' name='email' id='email' class='form-control' /> <br/><br/>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+      <div>
+        <form action='/user' method='POST'>
+          <div class='form-group'>
+            <label for='name'>Username</label>
+            <input type='text' name='username' id='name' class='form-control'/> <br/>
+          </div>
+          <div class='form-group'>
+            <label for='name'>Password</label>
+            <input type='password' name='password' id='password' class='form-control'/> <br/>
+          </div>
+          <div class='form-group'>
+            <label for='name'>First Name</label>
+            <input type='text' name='firstName' id='firstName' class='form-control'/> <br/>
+          </div>
+          <div class='form-group'>
+            <label for='name'>Last Name</label>
+            <input type='text' name='lastName' id='lastName' class='form-control'/> <br/>
+          </div>
+          <div class='form-group'>
+            <label for='name'>email</label>
+            <input type='email' name='email' id='email' class='form-control'/> <br/>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
   

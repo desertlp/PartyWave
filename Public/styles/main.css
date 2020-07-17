@@ -10,6 +10,7 @@ body {
     rgb(205, 119, 199)
   );
 }
+
 .white-background {
   margin: 50px 200px 50px 200px;
   padding-left: 150px;
@@ -19,6 +20,13 @@ body {
 h1 {
   color: red;
   font-family: "Oswald", sans-serif;
+
+
+
+
+h3 {
+  font-family: 'Oswald', sans-serif;
+
 }
 h2 {
   /* font-family: "Do Hyeon", sans-serif; */
@@ -28,8 +36,9 @@ h2 {
   z-index: 100;
 }
 h4 {
-  color: teal;
+  color: rgb(205, 119, 199);
   margin-bottom: 40px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .landing-message {
@@ -61,9 +70,11 @@ img {
   height: 500px;
   object-fit: cover;
 }
+
 .likedBeachCard-wrapper {
   padding: 20px;
 }
+
 .likedBeachCard {
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -99,9 +110,14 @@ a:hover {
 }
 .beachindexpagebuttons {
   width: 100%;
-  border-radius: 0;
+  border-radius: 10px;
   font-size: 18px;
   color: floralwhite;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 .beachcards-beachindexpage {
   display: flex;
@@ -134,7 +150,7 @@ footer {
 }
 .col-md-8 {
   padding: 40px;
-  padding-top: 100px;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -168,16 +184,14 @@ h5 {
   flex-direction: column;
 }
 .justthisbeachinfo {
-  padding: 30px;
+  padding: 20px;
   border: solid 2px red;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 .comment-section {
-  padding: 30px;
-  margin: 30px;
-  border: solid 2px blue;
+  padding: 20px;
   display: flex;
   flex-direction: row;
 }
@@ -194,9 +208,9 @@ h5 {
   font-size: 15px;
 }
 .add-comment {
-  padding: 30px;
-  margin: 30px;
-  border: solid 2px lightblue;
+  float: right;
+  margin: 10px;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -219,9 +233,11 @@ video {
   height: 500px;
   width: 100%;
 }
+
 img {
   border-radius: 15px;
 }
+
 .page-title-homepage-partywave {
   display: flex;
   flex-direction: column;
@@ -266,9 +282,40 @@ img {
 .col-md-4 {
   position: relative;
   /* top: 15px;
-  left: 20px;
-} */
+  left: 20px;*/
+
+}
+img {
+  border-radius: 10px;
+}
+
 
 .col-md-8 {
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
+
+.likedBeachCard-wrapper {
+  margin: 10px;
+  padding: 10px;
+  max-width: 80%;
+  background-color: black;
+}
+
+.white-background {
+  margin: 50px 200px 50px 200px;
+  padding: 50px 150px 50px 150px;
+  background-color: floralwhite;
+}
+
+.transparent-background {
+  margin: 50px 200px 50px 200px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.new-beach-form {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+

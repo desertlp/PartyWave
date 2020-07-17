@@ -5,27 +5,27 @@
 <body>
     <%- include('partials/nav.ejs') %>
     <h3 class='pagetitles'>All Beaches</h3>
-    <div class="white-background" id="transparentbackground">
-      <div class="cardbackgroundtransparent">
-        <div class='beachcards-beachindexpage'>
-          <% if (beaches.length) { %> 
-            <% for (let i = 0; i < beaches.length; i++) { %>
-              <div class="likedBeachCard-wrapper">
-                <div class="likedBeachCard">
-                  <a>
-                  <a href="/user/">
-                    <img class="like-surf-board-icon" src="/images/surfBoard.png" aria-hidden="true"></i>
-                  </a>
-                  <img src="/images/surfboardrocker.jpg" alt="Waves" style="width: 100%; height: 50%" />
-                  <p>
-                    <button class='beachindexpagebuttons'>
-                      <a href="/beaches/<%= beaches[i]._id %>">
-                        <h4 class='beachindexpagebeachbuttons'><%= beaches[i].name %></h4>
-                      </a>
-                    </button>
-                  </p>
-                  
-                </div>
+
+    <div class="transparent-background">
+      <div class='beachcards-beachindexpage'>
+        <% if (beaches.length) { %> 
+          <% for (let i = 0; i < beaches.length; i++) { %>
+            <div class="likedBeachCard-wrapper">
+              <div class="likedBeachCard">
+                <a>
+                <a href="/user/">
+                  <img class="like-surf-board-icon" src="/images/surfBoard.png" aria-hidden="true"></i>
+                </a>
+                <img src="/images/surfboardrocker.jpg" alt="Waves" style="width: 100%; height: 50%" />
+                <p>
+                  <button class='beachindexpagebuttons'>
+                    <a href="/beaches/<%= beaches[i]._id %>">
+                      <h4 class='beachindexpagebeachbuttons'><%= beaches[i].name %></h4>
+                    </a>
+                  </button>
+                </p>
+                
+
               </div>
     
     

@@ -6,13 +6,13 @@
   <body>
     <%- include('../partials/nav.ejs') %>
     <h3 class="pagetitles">Your Profile</h3>
-    <div class="white-background">
+    <div class="transparent-background">
       <div>
         <!-- Profile Card -->
         <div class="card mb-3">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <img src="/images/people.jpg" class="card-img" style="height: 200px;">
+              <img class="profilebeachimages" src="/images/people.jpg" class="card-img" style="height: 200px;">
             </div>
             <div class="col-md-8">
               <div class="card-body">
@@ -20,8 +20,23 @@
                 <p class="card-text"><%= user.username %></p>
                 <p class="card-text"><%= user.email %></p>
               </div>
+              <div class="edit-delete-profile">
+                <!-- Edit Button -->
+                <a href="/user/<%= user.id %>/edit">
+                  <button>Edit Profile</button>
+                </a>
+                <!-- Delete Button -->
+                <form
+                  style="display: inline-block;"
+                  method="POST"
+                  action="/user/<%= user.id %>?_method=DELETE"
+                >
+                  <button type="submit">Delete Profile</button>
+                </form>
+              </div>
             </div>
           </div>
+          
         </div>
 
 
@@ -31,7 +46,7 @@
         <div class='beachcards-beachindexpage'>
           <% if (user.beaches.length) { %> 
             <% for (let i = 0; i <user.beaches.length; i++) { %>
-              <div class="likedBeachCard-wrapper">
+              <div class="likedBeachCard-wrapper"  style="max-width: 200px">
                 <div class="likedBeachCard">
                   <a href="/beaches/">
                     <img src="/images/people.jpg" alt="Waves" style="width: 100%; height: 50%" />

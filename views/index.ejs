@@ -5,6 +5,7 @@
 <body>
     <%- include('partials/nav.ejs') %>
     <h3 class='pagetitles'>All Beaches</h3>
+
     <div class="transparent-background">
       <div class='beachcards-beachindexpage'>
         <% if (beaches.length) { %> 
@@ -24,29 +25,30 @@
                   </button>
                 </p>
                 
+
               </div>
+    
+    
+    
+              <div>
             </div>
-  
-  
-  
-            <div>
-          </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-        <% } %> <% } else { %>
-          <h3>Sorry, doesn't look like we have any beaches uploaded yet</h3>
-        <% } %>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+          <% } %> <% } else { %>
+            <h3>Sorry, doesn't look like we have any beaches uploaded yet</h3>
+          <% } %>
+        </div>
       </div>
     </div>
   <%- include('./partials/footer.ejs') %>

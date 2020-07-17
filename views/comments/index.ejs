@@ -3,25 +3,23 @@
   <%- include('../partials/head.ejs') %>
 <body>
   <%- include('../partials/nav.ejs') %>
-
-  <div>
-    <h3 class="pagetitles">All Comments On Site</h3>
-
+  <h3 class="pagetitles">All Comments On Site</h3>
+  <div class="white-background">
     <div>
-      <% if (comments.length) { %> <% for (let i = 0; i < comments.length; i++) { %>
       <div>
-        <p><%= comments[i].body %> | Posted: <%= comments[i].date %> | User: <%= comments[i].user %></p>
-        <a href="/comments/<%= comments[i]._id %>">
-          <p><%= comments[i].id %></p>
-        </a>
+        <% if (comments.length) { %> <% for (let i = 0; i < comments.length; i++) { %>
+        <div>
+          <p><%= comments[i].body %> | Posted: <%= comments[i].date %> | User: <%= comments[i].user %></p>
+          <a href="/comments/<%= comments[i]._id %>">
+            <p><%= comments[i].id %></p>
+          </a>
+        </div>
+        <% } %> <% } else { %>
+        <p>Sorry, doesn't look like we have any comments yet</p>
+        <% } %>
       </div>
-  
-      <% } %> <% } else { %>
-      <p>Sorry, doesn't look like we have any comments yet</p>
-      <% } %>
     </div>
   </div>
-  
   <%- include('../partials/footer.ejs') %>
   <%- include('../partials/bs.ejs') %>
 </body>

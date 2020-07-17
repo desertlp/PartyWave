@@ -6,12 +6,14 @@ const methodOverride = require('method-override');
 // current path +  /api/v1
 // API Routes Always Respond with Json
 
-router.get('/beaches/:id', (req, res)=> {
-    db.USER.findById(req.params.id, (err, foundUser) => {
+router.get('/api/v1/beaches', (req, res)=> {
+    console.log('we think we have it?');
+    db.USER.findById(req.session.currentUser._id, (err, foundUser) => {
         if (err) return console.log(err);
-        foundUser.beaches.push(req.params.id);
+        console.log(foundUser);
+        foundUser.beaches.push(req.session.currentUser._id);
         foundUser.save((err, savedUser) => {
-            return res.json({
+            return res.json({ // do i really need return? 
                 status: 201,
                 data: savedUser,
             });

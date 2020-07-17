@@ -8,13 +8,16 @@
     <!-- Landing message -->
 
     <div class="landing">
-      <h2>
-        <img src="/images/surfBoard.png" style="width: 10%; height: 10%;" />
-        PartyWave
-        <img src="/images/surfBoard.png" style="width: 10%; height: 10%;" />
+      <h2 class="page-title-homepage-partywave">
+        <p
+          style="
+          position: absolute;
+          z-index: 90;"
+          >PartyWave</p>
+        <img class="hompage-title-banner-surfboard" src="/images/surfBoard.png" 
+        />
       </h2>
-      <!-- <p>~ GET ON YOUR WAVELINK ~</p> -->
-      <div class="container">
+      <div class="login-container">
         <div class="row align-items-center justify-content-center">
           <div class="sign-in">
             <form
@@ -51,13 +54,14 @@
               </div>
             </form>
           </div>
-        </div>
+       </div>
 
-        <p id="sign-in-link"><a href="/user/new">New Surfer Sign Up</a></p>
+        <p id="sign-in-link"><a href="/user/new">New Surfer? Sign Up</a></p>
       </div>
     </div>
 
     <!-- Carousel -->
+<<<<<<< HEAD
     <!-- <div>
       <div
         id="carouselExampleCaptions"
@@ -128,6 +132,65 @@
     </div>
 
     <div class="below-blackbar-homepage"></div>
+=======
+
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <ol class="carousel-indicators">
+        <li
+          data-target="#carouselExampleCaptions"
+          data-slide-to="0"
+          class="active"
+        ></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <video class="d-block" autoplay loop>
+            <source src="/videos/la-vid.mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block"></div>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block" autoplay loop>
+            <source src="/videos/oc-vid.mp4" />
+          </video>
+
+          <div class="carousel-caption d-none d-md-block"></div>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block" autoplay loop>
+            <source src="/videos/sd-vid.mp4" />
+          </video>
+
+          <div class="carousel-caption d-none d-md-block"></div>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleCaptions"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleCaptions"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+>>>>>>> 9b238be90b4eaa48d156337b9891a07338fe76d4
 
     <!-- surf live cams -->
     <!-- 
@@ -183,6 +246,7 @@
       </div>
     </div> -->
 
+<<<<<<< HEAD
 
   <!-- Parrallax -->
     <div class="parallax">
@@ -194,5 +258,17 @@
     <!-- Footer -->
     <%- include('../partials/footer.ejs') %> 
     <%- include('../partials/bs.ejs')%>
+=======
+  <!-- Parrallax (LORA)-->
+    <!-- <div class="parallax">
+      <video autoplay>
+        <source src="/videos/la-vid.mp4" />
+      </video>
+    </div> -->
+
+    
+    <!-- Footer -->
+    <%- include('../partials/footer.ejs') %> <%- include('../partials/bs.ejs')%>
+>>>>>>> 9b238be90b4eaa48d156337b9891a07338fe76d4
   </body>
 </html>

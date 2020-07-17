@@ -261,3 +261,12 @@ img {
 #transparentbackground {
   background-color: none;
 }
+.col-md-4 {
+  position: relative;
+  top: 45px;
+  left: 20px;
+}
+
+.col-md-8 {
+  font-family: "Oswald", sans-serif;
+}

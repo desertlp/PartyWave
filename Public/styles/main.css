@@ -10,8 +10,7 @@ body {
 
 
 
-h1 {
-  color: red;
+h3 {
   font-family: 'Oswald', sans-serif;
 }
 
@@ -24,8 +23,9 @@ h2 {
 }
 
 h4 {
-  color: teal;
+  color: rgb(205, 119, 199);
   margin-bottom: 40px;
+  font-family: 'Oswald', sans-serif;
 }
 
 
@@ -127,9 +127,14 @@ a:hover {
 
 .beachindexpagebuttons {
   width: 100%;
-  border-radius: 0;
+  border-radius: 10px;
   font-size: 18px;
   color: floralwhite;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .beachcards-beachindexpage {
@@ -205,7 +210,7 @@ h5 {
   flex-direction: column;
 }
 .justthisbeachinfo {
-  padding: 30px;
+  padding: 20px;
   border: solid 2px red;
   display: flex;
   flex-direction: row;
@@ -213,9 +218,7 @@ h5 {
 }
 
 .comment-section {
-  padding: 30px;
-  margin: 30px;
-  border: solid 2px blue;
+  padding: 20px;
   display: flex;
   flex-direction: row;
 }
@@ -235,9 +238,9 @@ h5 {
 }
 
 .add-comment {
-  padding: 30px;
-  margin: 30px;
-  border: solid 2px lightblue;
+  float: right;
+  margin: 10px;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -265,9 +268,7 @@ video {
 }
 
 
-img {
-  border-radius: 15px;
-}
+
 
 .page-title-homepage-partywave {
   display: flex;
@@ -312,6 +313,9 @@ img {
   top: 45px;
   left: 20px;
 }
+img {
+  border-radius: 10px;
+}
 
 
 .col-md-8 {
@@ -319,8 +323,10 @@ img {
 }
 
 .likedBeachCard-wrapper {
+  margin: 10px;
   padding: 10px;
   max-width: 80%;
+  background-color: black;
 }
 
 .white-background {

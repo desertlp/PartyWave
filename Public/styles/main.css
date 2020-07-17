@@ -127,6 +127,7 @@ footer {
   justify-content: space-around;
 }
 .mb-3 {
+  border-radius: 50%;
   max-width: none;
   padding: 20px;
   margin: 20px;
@@ -248,6 +249,7 @@ img {
   z-index: 999;
 }
 .like-surf-board-icon {
+  
   margin-top: 20px;
   margin-left: 240px;
   width: 50px;
@@ -263,9 +265,9 @@ img {
 }
 .col-md-4 {
   position: relative;
-  top: 45px;
+  /* top: 15px;
   left: 20px;
-}
+} */
 
 .col-md-8 {
   font-family: "Oswald", sans-serif;

@@ -316,18 +316,12 @@ img {
   position: absolute;
   z-index: 3;
 }
+.col-md-4{
+  position: relative;
+  top: 45px;
+  left: 20px;
+}
 
-/* .parallax {
-  perspective: 1px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: absolute;
-  top: 200px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  object-fit: cover;
-  transform: translateZ(-1px);
-  z-index: 0;
-} */
+.col-md-8 {
+  font-family: 'Oswald', sans-serif;
+}

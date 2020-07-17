@@ -8,16 +8,9 @@ body {
   background: radial-gradient(circle at 100px 100px, rgb(247, 197, 103), rgb(205, 119, 199));
 }
 
-.white-background {
-  margin: 50px 200px 50px 200px;
-  padding-left: 150px;
-  padding-right: 150px;
-  background-color: floralwhite;
 
-}
 
-h1 {
-  color: red;
+h3 {
   font-family: 'Oswald', sans-serif;
 }
 
@@ -30,8 +23,9 @@ h2 {
 }
 
 h4 {
-  color: teal;
+  color: rgb(205, 119, 199);
   margin-bottom: 40px;
+  font-family: 'Oswald', sans-serif;
 }
 
 
@@ -92,10 +86,7 @@ img {
   object-fit: cover;
 }
 
-.likedBeachCard-wrapper{
-  padding: 20px;
 
-}
 .likedBeachCard {
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -136,9 +127,14 @@ a:hover {
 
 .beachindexpagebuttons {
   width: 100%;
-  border-radius: 0;
+  border-radius: 10px;
   font-size: 18px;
   color: floralwhite;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .beachcards-beachindexpage {
@@ -175,7 +171,7 @@ footer {
 }
 .col-md-8 {
   padding: 40px;
-  padding-top: 100px;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -214,7 +210,7 @@ h5 {
   flex-direction: column;
 }
 .justthisbeachinfo {
-  padding: 30px;
+  padding: 20px;
   border: solid 2px red;
   display: flex;
   flex-direction: row;
@@ -222,9 +218,7 @@ h5 {
 }
 
 .comment-section {
-  padding: 30px;
-  margin: 30px;
-  border: solid 2px blue;
+  padding: 20px;
   display: flex;
   flex-direction: row;
 }
@@ -244,9 +238,9 @@ h5 {
 }
 
 .add-comment {
-  padding: 30px;
-  margin: 30px;
-  border: solid 2px lightblue;
+  float: right;
+  margin: 10px;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -274,9 +268,7 @@ video {
 }
 
 
-img {
-  border-radius: 15px;
-}
+
 
 .page-title-homepage-partywave {
   display: flex;
@@ -321,7 +313,36 @@ img {
   top: 45px;
   left: 20px;
 }
+img {
+  border-radius: 10px;
+}
+
 
 .col-md-8 {
   font-family: 'Oswald', sans-serif;
+}
+
+.likedBeachCard-wrapper {
+  margin: 10px;
+  padding: 10px;
+  max-width: 80%;
+  background-color: black;
+}
+
+.white-background {
+  margin: 50px 200px 50px 200px;
+  padding: 50px 150px 50px 150px;
+  background-color: floralwhite;
+}
+
+.transparent-background {
+  margin: 50px 200px 50px 200px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.new-beach-form {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
 }

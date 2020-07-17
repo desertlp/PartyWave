@@ -3,30 +3,28 @@
 <%- include('partials/head.ejs') %>
 <body>
   <%- include('partials/nav.ejs') %>
-
   <h3 class="pagetitles">Add A Beach</h3>
-  <div>
-    <form action="/beaches" method="POST">
-      Name: <input type="text" name="name" /> <br/><br/>
-      Street Address: <input type="text" name="streetAddress" /> <br/><br/>
-      City: <input type="text" name="city" /> <br/><br/>
-      Zip: <input type="text" name="zip" /> <br/><br/>
-  
-      <div>
-        <label for="county">County</label>
-        <select name="countyId" id="county">
-          <% counties.forEach(county => { %>
-          <option value="<%= county._id %>"><%= county.name %></option>
-          <% }) %>
-        </select>
-      </div>
-  
-      Link To Surfline Surf Report: <input type="text" name="surflineSrc" /><br/><br/>
-      Link To Live Surf Cam: <input type="text" name="surfCamSrc" /><br/><br/>
-      <button type="submit">Submit</button>
-    </form>
+  <div class="white-background">
+    <div>
+      <form class="new-beach-form" action="/beaches" method="POST">
+        <input type="text" name="name" value="Name Your Spot" /> <br/>
+        <input type="text" name="surflineSrc" value="Link To Surfline"/><br/>
+        <input type="text" name="surfCamSrc" value="Link To Live Surf Cam"/><br/>
+        <input type="text" name="streetAddress" value="Street Address"/> <br/>
+        <input type="text" name="city" value="City" /> <br/>
+        <input type="text" name="zip" value="Zip" /> <br/>
+        <div>
+          <label for="county"></label>
+          <select name="countyId" id="county">
+            <% counties.forEach(county => { %>
+            <option value="<%= county._id %>"><%= county.name %></option>
+            <% }) %>
+          </select>
+        </div> <br/>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </div>
-
   <%- include('./partials/footer.ejs') %>
   <%- include('partials/bs.ejs') %>
 </body>

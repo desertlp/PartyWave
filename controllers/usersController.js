@@ -49,6 +49,35 @@ router.post("/", (req, res) => {
 });
 
 
+// EDIT (DONE)
+router.get('/:id/edit', (req, res) => {
+    db.USER.findById(req.params.id, (err, foundUserToEdit) => {
+        if (err) return console.log(err);
+        res.render('./user/edit', {
+            user: foundUserToEdit,
+        });
+    });
+});
+
+
+// UPDATE (DONE)
+router.put('/:id', (req, res) => {
+    console.log(req.params.id);
+    db.USER.findByIdAndUpdate(
+        req.params.id, 
+        req.body, 
+        {new: true}, 
+        (err, updatedUser) => {  
+            console.log(updatedUser);
+            if (err) return console.log(err);
+            updatedUser.update({}); 
+            res.redirect('/user'); 
+        }
+    );
+});
+
+
+
 // DELETE (DONE)
 router.delete('/:id', (req, res) => {
     db.USER.findByIdAndDelete(

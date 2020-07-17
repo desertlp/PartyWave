@@ -220,6 +220,7 @@ h5 {
 }
 
 .comment-section {
+  margin-top: 60px;
   padding: 20px;
   display: flex;
   flex-direction: row;
@@ -356,4 +357,16 @@ img {
   display: flex;
   flex-direction: column;
   align-content: space-around;
+}
+
+.beach-info-img {
+  position: absolute;
+  left: -400px;
+  top: -50px;
+}
+
+.card-body-beach{ 
+  position: relative;
+  left: 200px;
+  top: -10px;
 }

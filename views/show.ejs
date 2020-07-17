@@ -9,41 +9,74 @@
   <body>
     <%- include('partials/nav.ejs') %>
     <h3 class="pagetitles"><%= beach.name %></h3>
-    <div class="white-background">
+    <div class="transparent-background">
       <div class="beach-wapper-wrapper">
         <div class="beach-wapper">
-          <div class="justthisbeachinfo">
-            <div>
-              <video class="beach-info-img" autoplay>
-                <source
-                  src="blob:https://www.surfline.com/d4e3b074-872d-4f89-ba3f-1ced46d6cdfa"
-                  alt="Waves"
-                  style="size: 50%;"
-                />
-              </video>
-            </div>
-            <div class="beach-info-text">
-              <h4><%= beach.name %></h4>
-              <p><%= beach.county[0].name %></p>
-              <p><%= beach.streetAddress%> <%= beach.city %>, <%= beach.zip %></p>
-              <p>Surf Report: <%= beach.surflineSrc %></p>
-              <p>Surf Cam: <%= beach.surfCamSrc %></p>
-              <div class="beachinfobuttons">
-                <!-- Delete Button -->
-                <form
-                  style="display: inline-block;"
-                  method="POST"
-                  action="/beaches/<%= beach.id %>?_method=DELETE"
-                >
-                  <button type="submit">Delete</button>
-                </form>
-                <!-- Edit Button -->
-                <a href="/beaches/<%= beach.id %>/edit">
-                  <button>Edit</button>
-                </a>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Profile Card -->
+        <div class="card mb-3">
+            <div class="row no-gutters">
+              <div class="col-md-5">
+                <img class=" beach-info-img" src="/images/surfBoard.png" class="card-img" style="height: 400px;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body-beach">
+                  <h3 class="card-title"><%= beach.name %></h3>
+                  <p class="card-text"><%= beach.county[0].name %></p>
+                  <p class="card-text"><%= beach.streetAddress%> <%= beach.city %>, <%= beach.zip %></p>
+                  <p class="card-text">Surf Report: <%= beach.surflineSrc %></p>
+                  <p class="card-text">Surf Cam: <%= beach.surfCamSrc %></p>
+                </div>
+                <div class="beachinfobuttons">
+                    <!-- Delete Button -->
+                    <form
+                      style="display: inline-block;"
+                      method="POST"
+                      action="/beaches/<%= beach.id %>?_method=DELETE"
+                    >
+                      <button type="submit">Delete</button>
+                    </form>
+                    <!-- Edit Button -->
+                    <a href="/beaches/<%= beach.id %>/edit">
+                      <button>Edit</button>
+                    </a>
+                  </div>
               </div>
             </div>
+            
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <!--- Comments -->
           <div class="comment-section">
             <!--- See Other's Comments Section -->

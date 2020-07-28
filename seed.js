@@ -39,7 +39,7 @@ const newCounty = [
 // delete counties? Do we need to do this? 
 
 // create
-db.COUNTY.create(county, (err, newCounty) => {
+db.COUNTY.create(newCounty, (err, newCounty) => {
     if (err) console.log(err);
     console.log('New County Created');
     console.log(newCounty);

@@ -20,7 +20,7 @@ app.set("view engine", "ejs");
 
 
 // MiddleWare
-app.use(express.static(`${__dirname}/public`)); // Set Static Assets
+app.use(express.static("public")); // Set Static Assets
 app.use(methodOverride("_method")); // Method-Override
 app.use(express.urlencoded({ extended: false })); // Body-Parser
 app.use((req, res, next) => {
